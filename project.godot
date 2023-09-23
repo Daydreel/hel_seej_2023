@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+EventBus="*res://system/EventBus.gd"
 SceneTransition="*res://system/scene_transition.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 DataPlayer="*res://system/DataPlayer.gd"

@@ -26,9 +26,6 @@ func _input(event):
 			next(dialogue_line.next_id)
 
 		if dialogue_line :
-			print(dialogue_line.id, " ", dialogue_line)
-			if !dialogue_line.responses.is_empty():
-				display_choices()
 			display_dialogue()
 		else :
 			end_dialogue()
@@ -42,9 +39,11 @@ func display_dialogue():
 	if !dialogue_line :
 		end_dialogue()
 		return
-	print("display_dialogue ", dialogue_line)
 	dialogue_label.dialogue_line = dialogue_line
 	character_label.text = dialogue_line.character
+	
+	if !dialogue_line.responses.is_empty():
+		display_choices()
 
 
 func display_choices():
@@ -66,7 +65,6 @@ func end_dialogue():
 
 
 func _on_button_pressed(choice : DialogueResponse):
-	print(choice.text, " ", choice.id, " next_id = ", choice.next_id)
 	for button in grid_buttons.get_children() :
 		button.queue_free()
 	next(choice.next_id)
