@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctauqquyt4r7x"]
+
+[ext_resource type="Script" path="res://gameobject/player/player.gd" id="1_qaofc"]
+[ext_resource type="Texture2D" uid="uid://cy8t0rpci3v15" path="res://assets/placeholder/sprites principal.png" id="2_cj8mi"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w3pr8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7wewj"]
+radius = 19.0
+
+[node name="Camus" type="CharacterBody2D" node_paths=PackedStringArray("area_self", "sprite")]
+script = ExtResource("1_qaofc")
+area_self = NodePath("Area2D")
+sprite = NodePath("Sprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_w3pr8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("2_cj8mi")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_7wewj")
+debug_color = Color(1, 0.6, 0.701961, 0.419608)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

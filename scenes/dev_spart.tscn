@@ -1,3 +1,45 @@
-[gd_scene format=3 uid="uid://bl7llupqn4kwx"]
+[gd_scene load_steps=7 format=3 uid="uid://bl7llupqn4kwx"]
+
+[ext_resource type="PackedScene" uid="uid://ctauqquyt4r7x" path="res://gameobject/player/player.tscn" id="1_7i0nr"]
+[ext_resource type="Texture2D" uid="uid://col3hor4ik3jy" path="res://assets/placeholder/Fond_Eglise_2.png" id="1_j1ly6"]
+[ext_resource type="Texture2D" uid="uid://biu74kgtyee52" path="res://assets/placeholder/Fond_Eglise_1.png" id="2_0ndhy"]
+[ext_resource type="PackedScene" uid="uid://dqukyx2i1rgkd" path="res://gameobject/moine/moine.tscn" id="2_b1xc7"]
+[ext_resource type="PackedScene" uid="uid://6wcsar3ejvvn" path="res://gameobject/cercueil/cercueil.tscn" id="5_fg2g2"]
+[ext_resource type="PackedScene" uid="uid://jp3ui8rk7h2l" path="res://gameobject/door/door.tscn" id="6_y563y"]
 
 [node name="dev_spart" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-63, 0)
+motion_scale = Vector2(1.1, 1.1)
+
+[node name="FondEglise2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(215, 0)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_j1ly6")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-63, 0)
+
+[node name="FondEglise1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(224, 0)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_0ndhy")
+
+[node name="Player" parent="." instance=ExtResource("1_7i0nr")]
+position = Vector2(2, 10)
+speed = 50.0
+
+[node name="Moine" parent="." instance=ExtResource("2_b1xc7")]
+position = Vector2(198, 10)
+
+[node name="Moine2" parent="." instance=ExtResource("2_b1xc7")]
+position = Vector2(237, 10)
+
+[node name="Cercueil" parent="." instance=ExtResource("5_fg2g2")]
+position = Vector2(364, 18)
+
+[node name="Door" parent="." instance=ExtResource("6_y563y")]
+position = Vector2(-63, 0)

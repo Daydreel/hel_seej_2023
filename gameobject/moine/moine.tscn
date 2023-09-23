@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqukyx2i1rgkd"]
+
+[ext_resource type="Script" path="res://gameobject/moine/moine.gd" id="1_3vmfc"]
+[ext_resource type="Texture2D" uid="uid://l6ogxfy8two4" path="res://assets/placeholder/sprites moine.png" id="2_t4lwr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0uucs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dmy10"]
+radius = 19.105
+
+[node name="Moine" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
+collision_layer = 2
+script = ExtResource("1_3vmfc")
+sprite = NodePath("Sprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_0uucs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("2_t4lwr")
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_dmy10")
+debug_color = Color(1, 0.6, 0.701961, 0.419608)
