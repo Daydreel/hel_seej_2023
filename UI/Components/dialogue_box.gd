@@ -1,4 +1,5 @@
 extends Control
+class_name DialogueBox
 
 @onready var dialogue_label : DialogueLabel = $Dialogue/MC/DialogueLabel
 @onready var character_label : RichTextLabel = $Character/MC/CharacterLabel
@@ -20,11 +21,14 @@ func _input(event):
 		
 		if dialogue_line :
 			next(dialogue_line.next_id)
+
 		if dialogue_line :
 			print(dialogue_line.id, " ", dialogue_line)
 			if !dialogue_line.responses.is_empty():
 				display_choices()
 			display_dialogue()
+		else :
+			end_dialogue()
 
 
 func start_dialogue(title : String):
@@ -33,7 +37,7 @@ func start_dialogue(title : String):
 
 func display_dialogue():
 	if !dialogue_line :
-		print("the end")
+		end_dialogue()
 		return
 	print("display_dialogue ", dialogue_line)
 	dialogue_label.dialogue_line = dialogue_line
@@ -53,6 +57,8 @@ func display_choices():
 func next(next_id: String) -> void:
 	dialogue_line = await r_dialogue.get_next_dialogue_line(next_id)
 
+func end_dialogue():
+	queue_free()
 
 func _on_button_pressed(choice : DialogueResponse):
 	print(choice.text, " ", choice.id, " next_id = ", choice.next_id)
