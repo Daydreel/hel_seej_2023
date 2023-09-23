@@ -4,7 +4,7 @@ class_name Player
 @onready var camera : Camera2D = preload("res://gameobject/player/camera_player.tscn").instantiate()
 @export var area_self : Area2D
 @export var sprite : Sprite2D
-@export var anim_player : AnimationPlayer
+@export var anim_state : AnimationTree
 
 @export var speed : float = 300.0
 var speed_manipulation : float = 1.0
@@ -30,6 +30,12 @@ func _physics_process(_delta: float) -> void:
 	
 	if absf(direction) > 0.001:
 		sprite.flip_h = true if direction < 0.0 else false
+		
+		anim_state["parameters/conditions/idle"] = false
+		anim_state["parameters/conditions/running"] = true
+	else:
+		anim_state["parameters/conditions/running"] = false
+		anim_state["parameters/conditions/idle"] = true
 
 
 func _process(_delta: float) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ctauqquyt4r7x"]
+[gd_scene load_steps=15 format=3 uid="uid://ctauqquyt4r7x"]
 
 [ext_resource type="Script" path="res://gameobject/player/player.gd" id="1_qaofc"]
 [ext_resource type="Texture2D" uid="uid://cy8t0rpci3v15" path="res://assets/placeholder/sprites principal.png" id="2_cj8mi"]
@@ -10,47 +10,6 @@ polygon = PackedVector2Array(-5, 15, -4, 4, -6, 4, -6, -1, -3, -8, -2, -8, -2, -
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7wewj"]
 radius = 19.0
-
-[sub_resource type="Animation" id="Animation_sfjdb"]
-resource_name = "running"
-length = 0.825
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(3.42, -3.895), Vector2(-0.985, -3.895)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 0.148353, -0.148353]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0.055, 0.055), Vector2(0.06, 0.06), Vector2(0.06, 0.06)]
-}
 
 [sub_resource type="Animation" id="Animation_phjqu"]
 length = 0.001
@@ -91,16 +50,86 @@ tracks/2/keys = {
 "values": [Vector2(0.055, 0.055)]
 }
 
+[sub_resource type="Animation" id="Animation_sfjdb"]
+resource_name = "running"
+length = 0.825
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(3.42, -3.895), Vector2(-1.03, -2.745)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.148353, -0.148353]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.055, 0.055), Vector2(0.06, 0.06), Vector2(0.06, 0.06)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jbkw3"]
 _data = {
 "RESET": SubResource("Animation_phjqu"),
 "running": SubResource("Animation_sfjdb")
 }
 
-[node name="Camus" type="CharacterBody2D" node_paths=PackedStringArray("area_self", "sprite")]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8v7ct"]
+animation = &"RESET"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nrkhx"]
+animation = &"running"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_n3r0y"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8gokb"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"running"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_p0sj8"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_l51au"]
+states/RESET/node = SubResource("AnimationNodeAnimation_8v7ct")
+states/RESET/position = Vector2(392, 100)
+states/Start/position = Vector2(161, 100)
+states/running/node = SubResource("AnimationNodeAnimation_nrkhx")
+states/running/position = Vector2(547, 100)
+transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_n3r0y"), "RESET", "running", SubResource("AnimationNodeStateMachineTransition_8gokb"), "running", "RESET", SubResource("AnimationNodeStateMachineTransition_p0sj8")]
+graph_offset = Vector2(-353, -16)
+
+[node name="Camus" type="CharacterBody2D" node_paths=PackedStringArray("area_self", "sprite", "anim_state")]
 script = ExtResource("1_qaofc")
 area_self = NodePath("Area2D")
 sprite = NodePath("Sprite2D")
+anim_state = NodePath("AnimationTree")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_w3pr8")
@@ -127,6 +156,13 @@ debug_color = Color(1, 0.6, 0.701961, 0.419608)
 libraries = {
 "": SubResource("AnimationLibrary_jbkw3")
 }
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_l51au")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/conditions/idle = false
+parameters/conditions/running = false
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
