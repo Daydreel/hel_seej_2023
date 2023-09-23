@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmvlmfb56lcmw"]
+
+[ext_resource type="Script" path="res://gameobject/mimic_button/mimic_button.gd" id="1_eluad"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o1ikm"]
+radius = 8.0
+
+[node name="MimicButton" type="Node2D"]
+script = ExtResource("1_eluad")
+
+[node name="Button" type="Button" parent="."]
+z_index = 1
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_o1ikm")
+debug_color = Color(1, 0.6, 0.701961, 0.419608)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

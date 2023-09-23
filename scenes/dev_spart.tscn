@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bl7llupqn4kwx"]
+[gd_scene load_steps=10 format=3 uid="uid://bl7llupqn4kwx"]
 
 [ext_resource type="PackedScene" uid="uid://ctauqquyt4r7x" path="res://gameobject/player/player.tscn" id="1_7i0nr"]
 [ext_resource type="Texture2D" uid="uid://col3hor4ik3jy" path="res://assets/placeholder/Fond_Eglise_2.png" id="1_j1ly6"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://6wcsar3ejvvn" path="res://gameobject/cercueil/cercueil.tscn" id="5_fg2g2"]
 [ext_resource type="PackedScene" uid="uid://jp3ui8rk7h2l" path="res://gameobject/door/door.tscn" id="6_y563y"]
 [ext_resource type="PackedScene" uid="uid://dhej0bg4dwt21" path="res://gameobject/props/light_candace.tscn" id="7_1kxh1"]
+[ext_resource type="PackedScene" uid="uid://bmvlmfb56lcmw" path="res://gameobject/mimic_button/mimic_button.tscn" id="8_p6jnp"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_f7qi6"]
 polygon = PackedVector2Array(-330, 4, -328, 1, -332, 1)
@@ -23,7 +24,8 @@ texture = ExtResource("2_0ndhy")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(-63, 0)
-motion_scale = Vector2(1.1, 1.1)
+motion_scale = Vector2(0.9, 0.9)
+motion_offset = Vector2(0, 4.035)
 
 [node name="FondEglise2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(215, 0)
@@ -91,3 +93,6 @@ scale = Vector2(0.936357, 0.936357)
 [node name="PointLight2D13" parent="." instance=ExtResource("7_1kxh1")]
 position = Vector2(256, -18)
 scale = Vector2(0.936357, 0.936357)
+
+[node name="MimicButton" parent="." instance=ExtResource("8_p6jnp")]
+position = Vector2(12, -28)

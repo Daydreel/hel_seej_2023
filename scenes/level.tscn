@@ -1,7 +1,90 @@
-[gd_scene load_steps=2 format=3 uid="uid://duenlliiqkuwg"]
+[gd_scene load_steps=9 format=3 uid="uid://duenlliiqkuwg"]
 
-[ext_resource type="PackedScene" uid="uid://bl7llupqn4kwx" path="res://scenes/dev_spart.tscn" id="1_groyf"]
+[ext_resource type="Texture2D" uid="uid://biu74kgtyee52" path="res://assets/placeholder/Fond_Eglise_1.png" id="1_4hlnq"]
+[ext_resource type="Texture2D" uid="uid://col3hor4ik3jy" path="res://assets/placeholder/Fond_Eglise_2.png" id="2_18ssr"]
+[ext_resource type="PackedScene" uid="uid://ctauqquyt4r7x" path="res://gameobject/player/player.tscn" id="3_w0t3f"]
+[ext_resource type="PackedScene" uid="uid://dqukyx2i1rgkd" path="res://gameobject/moine/moine.tscn" id="4_e0n2s"]
+[ext_resource type="PackedScene" uid="uid://6wcsar3ejvvn" path="res://gameobject/cercueil/cercueil.tscn" id="5_o6f1j"]
+[ext_resource type="PackedScene" uid="uid://jp3ui8rk7h2l" path="res://gameobject/door/door.tscn" id="6_17lrt"]
+[ext_resource type="PackedScene" uid="uid://dhej0bg4dwt21" path="res://gameobject/props/light_candace.tscn" id="7_sidl4"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_f7qi6"]
+polygon = PackedVector2Array(-330, 4, -328, 1, -332, 1)
 
 [node name="level" type="Node2D"]
 
-[node name="dev_spart" parent="." instance=ExtResource("1_groyf")]
+[node name="FondEglise1" type="Sprite2D" parent="."]
+modulate = Color(0.5, 0.5, 0.5, 1)
+position = Vector2(161, 0)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_4hlnq")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-63, 0)
+motion_scale = Vector2(0.9, 0.9)
+motion_offset = Vector2(0, 4.035)
+
+[node name="FondEglise2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(215, 0)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_18ssr")
+
+[node name="Player" parent="." instance=ExtResource("3_w0t3f")]
+position = Vector2(2, 10)
+speed = 30.0
+
+[node name="Moine" parent="." instance=ExtResource("4_e0n2s")]
+position = Vector2(198, 10)
+dialogue_path = "res://assets/dialogues/d1_test.dialogue"
+
+[node name="Moine2" parent="." instance=ExtResource("4_e0n2s")]
+position = Vector2(237, 10)
+dialogue_path = "res://assets/dialogues/moine2.dialogue"
+
+[node name="Cercueil" parent="." instance=ExtResource("5_o6f1j")]
+position = Vector2(364, 18)
+
+[node name="Door" parent="." instance=ExtResource("6_17lrt")]
+position = Vector2(-63, 0)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(347, -14)
+occluder = SubResource("OccluderPolygon2D_f7qi6")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+position = Vector2(426, -14)
+occluder = SubResource("OccluderPolygon2D_f7qi6")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="."]
+position = Vector2(506, -14)
+occluder = SubResource("OccluderPolygon2D_f7qi6")
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="."]
+position = Vector2(586, -13)
+occluder = SubResource("OccluderPolygon2D_f7qi6")
+
+[node name="PointLight2D7" parent="." instance=ExtResource("7_sidl4")]
+position = Vector2(347, -16)
+scale = Vector2(0.936357, 0.936357)
+
+[node name="PointLight2D8" parent="." instance=ExtResource("7_sidl4")]
+position = Vector2(176, -20)
+scale = Vector2(0.936357, 0.936357)
+
+[node name="PointLight2D10" parent="." instance=ExtResource("7_sidl4")]
+position = Vector2(96, -17)
+scale = Vector2(0.936357, 0.936357)
+
+[node name="PointLight2D11" parent="." instance=ExtResource("7_sidl4")]
+position = Vector2(17, -18)
+scale = Vector2(0.936357, 0.936357)
+
+[node name="PointLight2D12" parent="." instance=ExtResource("7_sidl4")]
+position = Vector2(-38, -10)
+scale = Vector2(0.936357, 0.936357)
+
+[node name="PointLight2D13" parent="." instance=ExtResource("7_sidl4")]
+position = Vector2(256, -18)
+scale = Vector2(0.936357, 0.936357)

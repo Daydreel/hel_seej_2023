@@ -1,25 +1,49 @@
-[gd_scene load_steps=4 format=3 uid="uid://6wcsar3ejvvn"]
+[gd_scene load_steps=7 format=3 uid="uid://6wcsar3ejvvn"]
 
+[ext_resource type="Script" path="res://gameobject/cercueil/cercueil.gd" id="1_0bhqe"]
 [ext_resource type="Texture2D" uid="uid://bxfknrgktlnag" path="res://assets/placeholder/cercueil test 2.png" id="1_1m5hb"]
+[ext_resource type="Shader" path="res://assets/shader/outline.gdshader" id="1_fcj5t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w68j1"]
 size = Vector2(28, 20)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_med1a"]
+shader = ExtResource("1_fcj5t")
+shader_parameter/color = Color(0.941176, 0.564706, 0, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_ynotg"]
 radius = 17.0
 
-[node name="Cercueil" type="StaticBody2D"]
+[node name="Cercueil" type="StaticBody2D" node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_0bhqe")
+sprite = NodePath("Sprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_w68j1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_med1a")
 scale = Vector2(0.06, 0.06)
 texture = ExtResource("1_1m5hb")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="MimicButtonDetect" type="Area2D" parent="."]
 collision_layer = 4
+collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MimicButtonDetect"]
 shape = SubResource("CircleShape2D_ynotg")
 debug_color = Color(1, 0.6, 0.701961, 0.419608)
+
+[node name="PlayerDetect" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetect"]
+shape = SubResource("CircleShape2D_ynotg")
+debug_color = Color(1, 0.6, 0.701961, 0.419608)
+
+[connection signal="area_entered" from="MimicButtonDetect" to="." method="_on_mimic_button_detect_area_entered"]
+[connection signal="area_exited" from="MimicButtonDetect" to="." method="_on_mimic_button_detect_area_exited"]
