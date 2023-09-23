@@ -1,8 +1,9 @@
 extends Control
 class_name DialogueBox
 
-@onready var dialogue_label : DialogueLabel = $Dialogue/MC/DialogueLabel
-@onready var character_label : RichTextLabel = $Character/MC/CharacterLabel
+@onready var dialogue_label : DialogueLabel = $CL/Dialogue/MC/DialogueLabel
+@onready var character_label : RichTextLabel = $CL/Character/MC/CharacterLabel
+@onready var grid_buttons : GridContainer = $CL/GridContainer
 
 var r_dialogue : DialogueResource = load("res://assets/dialogues/d1_test.dialogue")
 var dialogue_line
@@ -49,7 +50,7 @@ func display_choices():
 	for choice in dialogue_line.responses:
 		var button = Button.new()
 		button.text = choice.text
-		$GridContainer.add_child(button)
+		grid_buttons.add_child(button)
 		button.pressed.connect(_on_button_pressed.bind(choice))
 
 
@@ -62,7 +63,7 @@ func end_dialogue():
 
 func _on_button_pressed(choice : DialogueResponse):
 	print(choice.text, " ", choice.id, " next_id = ", choice.next_id)
-	for button in $GridContainer.get_children() :
+	for button in grid_buttons.get_children() :
 		button.queue_free()
 	next(choice.next_id)
 	await_answer = false
