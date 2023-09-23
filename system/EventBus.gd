@@ -1,6 +1,7 @@
 extends Node
 
 signal admission #aveu en anglais
+signal drop_cercueil
 
 func game_over():
 	print("game over")

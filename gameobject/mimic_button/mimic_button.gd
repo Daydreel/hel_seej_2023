@@ -3,9 +3,13 @@ extends Node2D
 var button_clicked : bool
 var in_cercueil : StaticBody2D
 
-# Called when the node enters the scene tree for the first time.
+
+
+func _on_event_bus_drop_cercueil() -> void:
+	queue_free()
+
 func _ready() -> void:
-	pass # Replace with function body.
+	EventBus.drop_cercueil.connect(_on_event_bus_drop_cercueil)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,7 +22,7 @@ func _on_button_pressed() -> void:
 	if button_clicked and in_cercueil != null:
 		button_clicked = false
 #		in_cercueil.get_parent().mimic_button_drop()
-		print("mimic dropped")
+		EventBus.drop_cercueil.emit()
 		
 	else:
 		button_clicked = true
