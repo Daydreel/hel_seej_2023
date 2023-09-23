@@ -1,8 +1,12 @@
 ~ dialogue
 
-Nathan: [[Hi|Hello|Howdy]], this is dialogue.
-- Bye bye
-	do EventBus.game_over()
-- Stay
+do DataPlayer.is_trapped = true
+Nathan: Es-tu vertueux ?
+- Oui
+- Oui
+- Oui
+- Oui
+- Oui
+- Oui
 
 => END

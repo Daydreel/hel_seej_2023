@@ -71,16 +71,13 @@ scroll_active = false
 deselect_on_focus_loss_enabled = false
 
 [node name="GridContainer" type="GridContainer" parent="CL"]
+custom_minimum_size = Vector2(450, 250)
 layout_direction = 2
 offset_left = 575.0
 offset_top = 197.0
 offset_right = 575.0
 offset_bottom = 197.0
 columns = 3
-
-[node name="Button" type="Button" parent="CL"]
-offset_right = 8.0
-offset_bottom = 8.0
 
 [node name="MonkImage" type="TextureRect" parent="CL"]
 offset_left = 8.0

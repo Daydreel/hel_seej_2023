@@ -12,6 +12,8 @@ var dialogue_line
 var await_answer : bool = false
 
 func _ready():
+	EventBus.admission.connect(_on_EventBus_admission)
+	
 	r_dialogue = load(dialogue_path)
 	start_dialogue("dialogue")
 	display_dialogue()
@@ -43,7 +45,10 @@ func display_dialogue():
 	character_label.text = dialogue_line.character
 	
 	if !dialogue_line.responses.is_empty():
-		display_choices()
+		if DataPlayer.is_trapped:
+			display_trapped_choices()
+		else :
+			display_choices()
 
 
 func display_choices():
@@ -53,6 +58,14 @@ func display_choices():
 		button.text = choice.text
 		grid_buttons.add_child(button)
 		button.pressed.connect(_on_button_pressed.bind(choice))
+
+
+func display_trapped_choices():
+	await_answer = true
+	for choice in dialogue_line.responses:
+		var button = load("res://UI/Components/trap_button.tscn").instantiate()
+		button.text = choice.text
+		grid_buttons.add_child(button)
 
 
 ## Go to the next line
@@ -70,3 +83,7 @@ func _on_button_pressed(choice : DialogueResponse):
 	next(choice.next_id)
 	await_answer = false
 	display_dialogue()
+
+
+func _on_EventBus_admission():
+	end_dialogue()

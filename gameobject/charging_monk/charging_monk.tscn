@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtxtqfjo8blg4"]
+
+[ext_resource type="Texture2D" uid="uid://ckps5523pd70u" path="res://assets/graphic/sprites moines final.png" id="1_37eah"]
+[ext_resource type="Script" path="res://gameobject/charging_monk/charging_monk.gd" id="1_ualgd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_63as0"]
+size = Vector2(196, 487)
+
+[node name="ChargingMonk" type="CharacterBody2D"]
+script = ExtResource("1_ualgd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 5.5)
+shape = SubResource("RectangleShape2D_63as0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(-1, 1)
+texture = ExtResource("1_37eah")
