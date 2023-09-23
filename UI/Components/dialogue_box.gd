@@ -60,8 +60,10 @@ func display_choices():
 func next(next_id: String) -> void:
 	dialogue_line = await r_dialogue.get_next_dialogue_line(next_id)
 
+
 func end_dialogue():
 	queue_free()
+
 
 func _on_button_pressed(choice : DialogueResponse):
 	print(choice.text, " ", choice.id, " next_id = ", choice.next_id)

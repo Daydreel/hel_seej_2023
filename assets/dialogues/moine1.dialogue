@@ -1,0 +1,16 @@
+~ dialogue
+
+Nathan: Es-tu un homme vertueux ?
+- Oui
+	Nathan : Nous allons mettre cette vertu à l'épreuve
+- Non
+	Nathan : Je ne peux t'accepter dans mon église
+
+Nathan: L'aigle, fier de son vol élevé, regarde-t-il avec condescendance les créatures d'en bas ou vole-t-il haut pour être plus près du Ciel ?
+- Il se vante d'être au-dessus des autres créatures.
+	Nathan: Cette réponse manque de vertu.
+- Il vole haut pour être plus proche du Créateur.
+	Nathan: Tu es de toute évidence un homme juste.
+- Il cherche simplement une proie facile à capturer.
+	Nathan: Cette réponse manque de vertu.
+=> END
