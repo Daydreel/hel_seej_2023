@@ -1,4 +1,4 @@
-~ talk_to_test
+~ dialogue
 
 Nathan: [[Hi|Hello|Howdy]], this is dialogue.
 Nathan: Here are some choices.
@@ -6,7 +6,7 @@ Nathan: Here are some choices.
 	Nathan: You picked the first one.
 - Second one
 	Nathan: You picked the second one.
-- Start again => talk_to_test
+- Start again => dialogue
 - End the conversation => END
 Nathan: For more information see the online documentation.
 

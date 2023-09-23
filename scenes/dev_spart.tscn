@@ -46,9 +46,11 @@ speed = 50.0
 
 [node name="Moine" parent="." instance=ExtResource("2_b1xc7")]
 position = Vector2(198, 10)
+dialogue_path = "res://assets/dialogues/d1_test.dialogue"
 
 [node name="Moine2" parent="." instance=ExtResource("2_b1xc7")]
 position = Vector2(237, 10)
+dialogue_path = "res://assets/dialogues/moine2.dialogue"
 
 [node name="Cercueil" parent="." instance=ExtResource("5_fg2g2")]
 position = Vector2(364, 18)

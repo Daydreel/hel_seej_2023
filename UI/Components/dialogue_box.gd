@@ -5,13 +5,15 @@ class_name DialogueBox
 @onready var character_label : RichTextLabel = $CL/Character/MC/CharacterLabel
 @onready var grid_buttons : GridContainer = $CL/GridContainer
 
-var r_dialogue : DialogueResource = load("res://assets/dialogues/d1_test.dialogue")
+var dialogue_path : String
+var r_dialogue : DialogueResource 
 var dialogue_line
 
 var await_answer : bool = false
 
 func _ready():
-	start_dialogue("talk_to_test")
+	r_dialogue = load(dialogue_path)
+	start_dialogue("dialogue")
 	display_dialogue()
 
 
