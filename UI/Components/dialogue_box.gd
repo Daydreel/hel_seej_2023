@@ -14,7 +14,7 @@ func _ready():
 
 
 func _input(event):
-	if event.is_action_pressed("dialogic_default_action") :
+	if event.is_action_pressed("dialogue_default_action") :
 		if await_answer :
 			return
 		
@@ -56,7 +56,8 @@ func next(next_id: String) -> void:
 
 func _on_button_pressed(choice : DialogueResponse):
 	print(choice.text, " ", choice.id, " next_id = ", choice.next_id)
-	$GridContainer.get_children().clear()
+	for button in $GridContainer.get_children() :
+		button.queue_free()
 	next(choice.next_id)
 	await_answer = false
 	display_dialogue()
