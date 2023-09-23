@@ -13,23 +13,20 @@ border_color = Color(0.870588, 0.819608, 0.180392, 1)
 
 [node name="DialogueBox" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 script = ExtResource("1_uf1iq")
 
-[node name="Dialogue" type="Panel" parent="."]
+[node name="CL" type="CanvasLayer" parent="."]
+
+[node name="Dialogue" type="Panel" parent="CL"]
 custom_minimum_size = Vector2(500, 400)
-layout_mode = 0
 offset_left = 551.0
 offset_top = 63.0
 offset_right = 1051.0
 offset_bottom = 463.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_leox0")
 
-[node name="MC" type="MarginContainer" parent="Dialogue"]
+[node name="MC" type="MarginContainer" parent="CL/Dialogue"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -41,21 +38,20 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 5
 
-[node name="DialogueLabel" type="RichTextLabel" parent="Dialogue/MC"]
+[node name="DialogueLabel" type="RichTextLabel" parent="CL/Dialogue/MC"]
 layout_mode = 2
 text = "Dialogue"
 script = ExtResource("1_wsgnm")
 
-[node name="Character" type="Panel" parent="."]
+[node name="Character" type="Panel" parent="CL"]
 custom_minimum_size = Vector2(300, 50)
-layout_mode = 0
 offset_left = 508.0
 offset_top = 443.0
 offset_right = 808.0
 offset_bottom = 493.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_leox0")
 
-[node name="MC" type="MarginContainer" parent="Character"]
+[node name="MC" type="MarginContainer" parent="CL/Character"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -67,21 +63,19 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="CharacterLabel" type="RichTextLabel" parent="Character/MC"]
+[node name="CharacterLabel" type="RichTextLabel" parent="CL/Character/MC"]
 layout_mode = 2
 scroll_active = false
 deselect_on_focus_loss_enabled = false
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="GridContainer" type="GridContainer" parent="CL"]
 layout_direction = 2
-layout_mode = 1
 offset_left = 575.0
 offset_top = 197.0
 offset_right = 575.0
 offset_bottom = 197.0
 columns = 3
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
+[node name="Button" type="Button" parent="CL"]
 offset_right = 8.0
 offset_bottom = 8.0
