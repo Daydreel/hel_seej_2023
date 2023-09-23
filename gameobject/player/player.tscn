@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://ctauqquyt4r7x"]
 
 [ext_resource type="Script" path="res://gameobject/player/player.gd" id="1_qaofc"]
-[ext_resource type="Texture2D" uid="uid://cy8t0rpci3v15" path="res://assets/placeholder/sprites principal.png" id="2_cj8mi"]
+[ext_resource type="Texture2D" uid="uid://2aohdcybatbo" path="res://assets/graphic/sprites principal finis.png" id="2_pq17w"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w3pr8"]
 
@@ -16,7 +16,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/path = NodePath("FlipControl/Sprite2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -28,7 +28,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/path = NodePath("FlipControl/Sprite2D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -40,7 +40,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/path = NodePath("FlipControl/Sprite2D:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -52,43 +52,43 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_sfjdb"]
 resource_name = "running"
-length = 0.825
-loop_mode = 1
+length = 0.2
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/path = NodePath("FlipControl/Sprite2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(3.42, -3.895), Vector2(-1.03, -2.745)]
+"values": [Vector2(0, 0), Vector2(0.985, -2.337)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/path = NodePath("FlipControl/Sprite2D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 0.148353, -0.148353]
+"values": [0.0, 0.0349066]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/path = NodePath("FlipControl/Sprite2D:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.055, 0.055), Vector2(0.06, 0.06), Vector2(0.06, 0.06)]
+"values": [Vector2(0.055, 0.055), Vector2(0.056, 0.056)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jbkw3"]
@@ -128,18 +128,20 @@ graph_offset = Vector2(-353, -16)
 [node name="Camus" type="CharacterBody2D" node_paths=PackedStringArray("area_self", "sprite", "anim_state")]
 script = ExtResource("1_qaofc")
 area_self = NodePath("Area2D")
-sprite = NodePath("Sprite2D")
+sprite = NodePath("FlipControl/Sprite2D")
 anim_state = NodePath("AnimationTree")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_w3pr8")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="FlipControl" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="FlipControl"]
 z_index = 1
 scale = Vector2(0.055, 0.055)
-texture = ExtResource("2_cj8mi")
+texture = ExtResource("2_pq17w")
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D"]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="FlipControl/Sprite2D"]
 visible = false
 position = Vector2(0, 18.1818)
 scale = Vector2(18.1818, 18.1818)

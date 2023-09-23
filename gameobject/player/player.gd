@@ -29,7 +29,7 @@ func _physics_process(_delta: float) -> void:
 	
 	
 	if absf(direction) > 0.001:
-		sprite.flip_h = true if direction < 0.0 else false
+		sprite.get_parent().scale.x = -1.0 if direction < 0.0 else 1.0
 		
 		anim_state["parameters/conditions/idle"] = false
 		anim_state["parameters/conditions/running"] = true
