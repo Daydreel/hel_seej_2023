@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://jngk7d1r0rje"]
+[gd_scene load_steps=3 format=3 uid="uid://jngk7d1r0rje"]
+
+[ext_resource type="Script" path="res://scenes/dev_james.gd" id="1_anbav"]
+[ext_resource type="PackedScene" uid="uid://bqvl1q18ae0yt" path="res://UI/Components/dialogue_box.tscn" id="2_xsmwq"]
 
 [node name="dev_james" type="Node2D"]
+script = ExtResource("1_anbav")
+
+[node name="DialogueBox" parent="." instance=ExtResource("2_xsmwq")]
