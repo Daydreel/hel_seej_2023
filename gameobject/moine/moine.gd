@@ -9,7 +9,6 @@ var node_name : String = "Moine"
 var player_looking : bool
 var _dialogue_box := preload("res://UI/Components/dialogue_box.tscn")
 
-
 func interact_available(state : bool) -> void:
 	player_looking = state
 	sprite.modulate = Color.BROWN if state else Color.WHITE
