@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://t8aoe0oi6n12"]
+[gd_scene load_steps=5 format=3 uid="uid://t8aoe0oi6n12"]
 
 [ext_resource type="Script" path="res://UI/Screens/love_letter.gd" id="1_ugtpf"]
 [ext_resource type="Theme" uid="uid://755luokyxafl" path="res://assets/themes/main_theme.theme" id="2_obyr8"]
+[ext_resource type="Texture2D" uid="uid://eelwkfdsg7ho" path="res://assets/graphic/intro_v2_0.png" id="3_fapvu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wiur3"]
 bg_color = Color(0.356863, 0.0470588, 0.0980392, 1)
@@ -25,6 +26,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_wiur3")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -50,6 +52,15 @@ Que ce lieu sacré soit le témoin silencieux de nos âmes s'unissant dans un é
 Adieu,"
 horizontal_alignment = 1
 autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_fapvu")
 
 [node name="Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
