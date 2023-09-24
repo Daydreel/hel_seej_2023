@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://qaey2kh2aayf"]
+[gd_scene load_steps=10 format=3 uid="uid://qaey2kh2aayf"]
 
 [ext_resource type="Script" path="res://UI/Screens/end_screen.gd" id="1_aacua"]
 [ext_resource type="Texture2D" uid="uid://cp31wddtsqhh3" path="res://assets/graphic/MONSTRE.png" id="1_geiex"]
 [ext_resource type="Texture2D" uid="uid://dqyqciqw5857b" path="res://assets/graphic/heart attack.png" id="2_ck01d"]
 [ext_resource type="Texture2D" uid="uid://crtjr7h5wo4v1" path="res://assets/graphic/the end.png" id="4_j4tff"]
+[ext_resource type="AudioStream" uid="uid://c8kxjpunomgty" path="res://assets/audio/WIND.ogg" id="5_sfq42"]
+[ext_resource type="AudioStream" uid="uid://b2ob538ldn7nj" path="res://assets/audio/Monstre.ogg" id="6_y37r7"]
 
 [sub_resource type="Animation" id="Animation_ab67j"]
 length = 0.001
@@ -38,6 +40,18 @@ tracks/2/path = NodePath("doggo:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -82,6 +96,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [true, false, true, false, true, false, true, false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.9),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_64ym6"]
@@ -136,6 +162,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_sfq42")
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_y37r7")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
