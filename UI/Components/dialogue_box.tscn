@@ -77,6 +77,7 @@ offset_left = 762.0
 offset_top = 400.0
 offset_right = 1212.0
 offset_bottom = 650.0
+alignment = 1
 
 [node name="MonkImage" type="TextureRect" parent="CL"]
 offset_left = 2.0
