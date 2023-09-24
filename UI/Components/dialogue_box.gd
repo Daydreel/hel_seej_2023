@@ -1,6 +1,8 @@
 extends Control
 class_name DialogueBox
 
+var _dia_buttons_path = preload("res://UI/Components/dialogue_buttons.tscn")
+
 @onready var dialogue_label : DialogueLabel = $CL/Dialogue/MC/DialogueLabel
 @onready var character_label : RichTextLabel = $CL/Character/MC/CharacterLabel
 @onready var flow_container : FlowContainer = $CL/FlowContainer
@@ -58,7 +60,7 @@ func display_dialogue():
 func display_choices():
 	await_answer = true
 	for choice in dialogue_line.responses:
-		var button = Button.new()
+		var button = _dia_buttons_path.instantiate()
 		button.text = choice.text
 		flow_container.add_child(button)
 		button.pressed.connect(_on_button_pressed.bind(choice))
