@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqvl1q18ae0yt"]
+[gd_scene load_steps=5 format=3 uid="uid://bqvl1q18ae0yt"]
 
 [ext_resource type="Script" path="res://UI/Components/dialogue_box.gd" id="1_uf1iq"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_label.gd" id="1_wsgnm"]
-[ext_resource type="Theme" uid="uid://755luokyxafl" path="res://assets/themes/main_theme.theme" id="2_87xgr"]
 [ext_resource type="Texture2D" uid="uid://dqg64uo8785sf" path="res://assets/graphic/moine_1_retake.png" id="3_7ng48"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_leox0"]
@@ -21,11 +20,11 @@ script = ExtResource("1_uf1iq")
 [node name="CL" type="CanvasLayer" parent="."]
 
 [node name="Dialogue" type="Panel" parent="CL"]
-custom_minimum_size = Vector2(500, 400)
-offset_left = 551.0
-offset_top = 63.0
-offset_right = 1051.0
-offset_bottom = 463.0
+custom_minimum_size = Vector2(800, 600)
+offset_left = 710.0
+offset_top = 227.0
+offset_right = 1510.0
+offset_bottom = 827.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_leox0")
 
 [node name="MC" type="MarginContainer" parent="CL/Dialogue"]
@@ -42,7 +41,6 @@ theme_override_constants/margin_bottom = 5
 
 [node name="DialogueLabel" type="RichTextLabel" parent="CL/Dialogue/MC"]
 layout_mode = 2
-theme = ExtResource("2_87xgr")
 text = "Dialogue"
 script = ExtResource("1_wsgnm")
 
@@ -72,18 +70,17 @@ layout_mode = 2
 scroll_active = false
 deselect_on_focus_loss_enabled = false
 
-[node name="GridContainer" type="GridContainer" parent="CL"]
+[node name="FlowContainer" type="HFlowContainer" parent="CL"]
 custom_minimum_size = Vector2(450, 250)
 layout_direction = 2
-offset_left = 575.0
-offset_top = 197.0
-offset_right = 575.0
-offset_bottom = 197.0
-columns = 3
+offset_left = 762.0
+offset_top = 400.0
+offset_right = 1212.0
+offset_bottom = 650.0
 
 [node name="MonkImage" type="TextureRect" parent="CL"]
-offset_left = 8.0
-offset_top = 109.0
-offset_right = 508.0
-offset_bottom = 609.0
+offset_left = 2.0
+offset_top = 582.0
+offset_right = 502.0
+offset_bottom = 1082.0
 texture = ExtResource("3_7ng48")
