@@ -10,6 +10,7 @@ var speed_manipulation : float = 1.0
 var backward_move : bool = false
 
 var area_selected : Area2D
+@onready var foot_step_stream : AudioStreamPlayer = $AudioStreamPlayer
 
 func _ready():
 	EventBus.dialogue_initiated.connect(_on_EventBus_dialogue_initiated)
@@ -70,7 +71,11 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 
 func _on_EventBus_dialogue_initiated() -> void:
 	set_physics_process(false)
-
+	anim_state["parameters/conditions/running"] = false
+	anim_state["parameters/conditions/idle"] = true
 
 func _on_EventBus_dialogue_ended() -> void:
 	set_physics_process(true)
+
+func _sfx_foot_step() -> void:
+	foot_step_stream.play()
