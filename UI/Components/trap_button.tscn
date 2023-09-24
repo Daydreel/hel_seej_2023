@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d1cvwl77m6kxf"]
 
+[ext_resource type="FontFile" uid="uid://b7meo2vwkx04r" path="res://assets/graphic/fonts/Junicode-Regular.ttf" id="1_cv16h"]
 [ext_resource type="Script" path="res://UI/Components/trap_button.gd" id="1_nrovm"]
-[ext_resource type="Theme" uid="uid://755luokyxafl" path="res://assets/themes/main_theme.theme" id="1_vmkdk"]
 
 [node name="TrapButton" type="Button"]
 layout_direction = 1
@@ -17,7 +17,11 @@ offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(18, 15)
-theme = ExtResource("1_vmkdk")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.882353, 0.721569, 0.266667, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.203922, 0.203922, 0.203922, 1)
+theme_override_fonts/font = ExtResource("1_cv16h")
+theme_override_font_sizes/font_size = 20
 text = "Oui"
 script = ExtResource("1_nrovm")
 
