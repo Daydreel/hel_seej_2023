@@ -13,7 +13,7 @@ func fade_out():
 
 
 func goto_menu():
-	goto_scene(scenes[2].resource_path)
+	goto_scene(scenes[3].resource_path)
 
 
 func goto_scene(path : String) -> void:
