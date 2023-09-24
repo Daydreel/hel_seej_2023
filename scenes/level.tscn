@@ -46,7 +46,7 @@ speed = 30.0
 
 [node name="Moine" parent="Moines" instance=ExtResource("4_sc42c")]
 position = Vector2(36, 9)
-dialogue_path = "res://assets/dialogues/d1_test.dialogue"
+dialogue_path = "res://assets/dialogues/moine1.dialogue"
 
 [node name="Moine2" parent="Moines" instance=ExtResource("4_sc42c")]
 position = Vector2(160, 8)
@@ -54,6 +54,7 @@ dialogue_path = "res://assets/dialogues/moine2.dialogue"
 
 [node name="Moine3" parent="Moines" instance=ExtResource("4_sc42c")]
 position = Vector2(221, 14)
+dialogue_path = "res://assets/dialogues/moine3.dialogue"
 
 [node name="MoineFinal" parent="Moines" instance=ExtResource("4_sc42c")]
 position = Vector2(315, 11)
