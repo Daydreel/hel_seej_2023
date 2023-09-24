@@ -21,6 +21,7 @@ EventBus="*res://system/EventBus.gd"
 SceneTransition="*res://system/scene_transition.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 DataPlayer="*res://system/DataPlayer.gd"
+MusicManager="*res://system/music_manager.tscn"
 
 [dialogue_manager]
 
