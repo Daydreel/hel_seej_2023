@@ -65,7 +65,7 @@ monk_texture = ExtResource("7_pcdwf")
 
 [node name="MoineFinal" parent="Moines" instance=ExtResource("4_sc42c")]
 position = Vector2(315, 11)
-dialogue_path = "res://assets/dialogues/d1_test.dialogue"
+dialogue_path = "res://assets/dialogues/moine4.dialogue"
 monk_texture = ExtResource("8_w8u18")
 
 [node name="MoinesChargeant" type="Node2D" parent="."]

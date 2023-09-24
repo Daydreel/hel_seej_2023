@@ -5,12 +5,13 @@ Moine sympa: De grâce, noble seigneur, en cette nuit où l'on récite un saint 
 	Moine sympa : Si cela ne vous dérange point, je souhaite mettre à l'épreuve cette vertu que vous dites posséder...
 	Moine sympa: Monsieur, dites-moi, lorsque l'aigle, superbe en son vol céleste, contemple-t-il avec mépris les bêtes terrestres, ou s'élève-t-il si haut en quête de la proximité divine ?
 	- Il se vante d'être au-dessus des autres créatures.
-		Moine sympa: Cette réponse est dénuée de piété, car l'orgueil est un péché capital. Votre âme ne semble guère en harmonie avec notre cérémonie. Je vous prie de vous retirer pour la quiétude de notre office. (Game Over)
+		Moine sympa: Cette réponse est dénuée de piété, car l'orgueil est un péché capital. Votre âme ne semble guère en harmonie avec notre cérémonie. Je vous prie de vous retirer pour la quiétude de notre office.
+		do EventBus.game_over()
 	- Il s'élève pour se rapprocher du Créateur.
 		Moine sympa: Votre réponse révèle une âme pieuse. Mais le temps presse, bonsoir Seigneur. (FIN DIALOGUE)
 	- Il cherche simplement une proie facile à capturer.
 		Moine sympa: Cette réponse est dépourvue de l'essence spirituelle. Votre âme ne semble guère en harmonie avec nos rites. Je vous prie de vous retirer pour la quiétude de notre office. (Game over)
 - Non
-	Moine sympa : Noble Seigneur, votre âme ne semble guère en harmonie avec notre cérémonie. Je vous prie de vous retirer pour la quiétude de notre office. (Game Over)
-
+	Moine sympa : Noble Seigneur, votre âme ne semble guère en harmonie avec notre cérémonie. Je vous prie de vous retirer pour la quiétude de notre office.
+	do EventBus.game_over()
 => END
