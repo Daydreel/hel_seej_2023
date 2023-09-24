@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://6wcsar3ejvvn"]
 
 [ext_resource type="Script" path="res://gameobject/cercueil/cercueil.gd" id="1_0bhqe"]
-[ext_resource type="Texture2D" uid="uid://bxfknrgktlnag" path="res://assets/placeholder/cercueil test 2.png" id="1_1m5hb"]
 [ext_resource type="Shader" path="res://assets/shader/outline.gdshader" id="1_fcj5t"]
+[ext_resource type="Texture2D" uid="uid://c0n8jcfa8iluu" path="res://assets/graphic/sprites cercueil ouvert.png" id="3_7vjsm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w68j1"]
 size = Vector2(28, 20)
@@ -27,8 +27,8 @@ shape = SubResource("RectangleShape2D_w68j1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_med1a")
-scale = Vector2(0.06, 0.06)
-texture = ExtResource("1_1m5hb")
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_7vjsm")
 
 [node name="MimicButtonDetect" type="Area2D" parent="."]
 collision_layer = 4
