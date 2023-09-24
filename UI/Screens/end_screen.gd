@@ -4,7 +4,7 @@ extends Control
 
 func _ready():
 	anim_p.play("scary")
-
+	DataPlayer.is_dead = true
 
 
 

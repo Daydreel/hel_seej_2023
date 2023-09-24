@@ -1,11 +1,6 @@
 extends StaticBody2D
 
-
-
 @export var sprite : Sprite2D
-
-
-#func mimic_button_drop() -> void: 
 
 
 func _ready() -> void:

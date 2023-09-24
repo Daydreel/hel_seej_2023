@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://gameobject/door/door.gd" id="1_pih4w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_py0h5"]
-size = Vector2(10, 10)
+size = Vector2(2, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8dj6"]
 
@@ -11,6 +11,7 @@ size = Vector2(10, 10)
 script = ExtResource("1_pih4w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 0)
 shape = SubResource("RectangleShape2D_py0h5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

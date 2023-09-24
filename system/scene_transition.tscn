@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://coweiibe3giyu"]
 
-[ext_resource type="Script" path="res://SceneTransition.gd" id="1_bqc4b"]
+[ext_resource type="Script" path="res://system/SceneTransition.gd" id="1_31uuw"]
 [ext_resource type="PackedScene" uid="uid://bpil8c86hkndr" path="res://UI/Screens/splash_screen.tscn" id="2_ltuq5"]
 [ext_resource type="PackedScene" uid="uid://bml8ygfjntbyf" path="res://UI/Screens/title_screen.tscn" id="3_ivlhd"]
 [ext_resource type="PackedScene" uid="uid://bckam8xy8wowg" path="res://UI/Screens/intro.tscn" id="4_pq51d"]
@@ -110,7 +110,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_bqc4b")
+script = ExtResource("1_31uuw")
 scenes = Array[PackedScene]([ExtResource("2_ltuq5"), ExtResource("3_ivlhd"), ExtResource("4_pq51d"), ExtResource("5_rsjfn"), ExtResource("5_nqp68"), ExtResource("7_0kpau"), ExtResource("8_chcce"), ExtResource("9_kvpr3")])
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

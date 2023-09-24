@@ -78,7 +78,7 @@ position = Vector2(343, 16)
 position = Vector2(337, 17)
 
 [node name="Door" parent="." instance=ExtResource("6_lofp7")]
-position = Vector2(-63, 0)
+position = Vector2(-59, 0)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 position = Vector2(347, -14)
