@@ -20,11 +20,11 @@ script = ExtResource("1_uf1iq")
 [node name="CL" type="CanvasLayer" parent="."]
 
 [node name="Dialogue" type="Panel" parent="CL"]
-custom_minimum_size = Vector2(800, 600)
-offset_left = 710.0
-offset_top = 227.0
-offset_right = 1510.0
-offset_bottom = 827.0
+custom_minimum_size = Vector2(800, 300)
+offset_left = 966.0
+offset_top = 739.0
+offset_right = 1766.0
+offset_bottom = 1039.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_leox0")
 
 [node name="MC" type="MarginContainer" parent="CL/Dialogue"]
@@ -71,12 +71,12 @@ scroll_active = false
 deselect_on_focus_loss_enabled = false
 
 [node name="FlowContainer" type="HFlowContainer" parent="CL"]
-custom_minimum_size = Vector2(450, 250)
+custom_minimum_size = Vector2(600, 150)
 layout_direction = 2
-offset_left = 762.0
-offset_top = 400.0
-offset_right = 1212.0
-offset_bottom = 650.0
+offset_left = 1082.0
+offset_top = 850.0
+offset_right = 1682.0
+offset_bottom = 1000.0
 alignment = 1
 
 [node name="MonkImage" type="TextureRect" parent="CL"]
