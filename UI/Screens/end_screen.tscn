@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://qaey2kh2aayf"]
+[gd_scene load_steps=8 format=3 uid="uid://qaey2kh2aayf"]
 
 [ext_resource type="Script" path="res://UI/Screens/end_screen.gd" id="1_aacua"]
 [ext_resource type="Texture2D" uid="uid://cp31wddtsqhh3" path="res://assets/graphic/MONSTRE.png" id="1_geiex"]
 [ext_resource type="Texture2D" uid="uid://dqyqciqw5857b" path="res://assets/graphic/heart attack.png" id="2_ck01d"]
+[ext_resource type="Texture2D" uid="uid://crtjr7h5wo4v1" path="res://assets/graphic/the end.png" id="4_j4tff"]
 
 [sub_resource type="Animation" id="Animation_ab67j"]
 length = 0.001
@@ -116,4 +117,25 @@ libraries = {
 "": SubResource("AnimationLibrary_64ym6")
 }
 
+[node name="TheEnd" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_j4tff")
+
+[node name="Button" type="Button" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
