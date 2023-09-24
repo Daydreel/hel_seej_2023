@@ -3,10 +3,10 @@ class_name DialogueBox
 
 @onready var dialogue_label : DialogueLabel = $CL/Dialogue/MC/DialogueLabel
 @onready var character_label : RichTextLabel = $CL/Character/MC/CharacterLabel
-@onready var grid_buttons : GridContainer = $CL/GridContainer
+@onready var flow_container : FlowContainer = $CL/FlowContainer
 
 var dialogue_path : String
-var r_dialogue : DialogueResource 
+var r_dialogue : DialogueResource
 var dialogue_line
 
 var await_answer : bool = false
@@ -56,7 +56,7 @@ func display_choices():
 	for choice in dialogue_line.responses:
 		var button = Button.new()
 		button.text = choice.text
-		grid_buttons.add_child(button)
+		flow_container.add_child(button)
 		button.pressed.connect(_on_button_pressed.bind(choice))
 
 
@@ -65,7 +65,7 @@ func display_trapped_choices():
 	for choice in dialogue_line.responses:
 		var button = load("res://UI/Components/trap_button.tscn").instantiate()
 		button.text = choice.text
-		grid_buttons.add_child(button)
+		flow_container.add_child(button)
 
 
 ## Go to the next line
@@ -78,7 +78,7 @@ func end_dialogue():
 
 
 func _on_button_pressed(choice : DialogueResponse):
-	for button in grid_buttons.get_children() :
+	for button in flow_container.get_children() :
 		button.queue_free()
 	next(choice.next_id)
 	await_answer = false
