@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://rsc00gytdcyq"]
+[gd_scene load_steps=4 format=3 uid="uid://rsc00gytdcyq"]
 
+[ext_resource type="Script" path="res://UI/Screens/credits.gd" id="1_jb22m"]
 [ext_resource type="Texture2D" uid="uid://c0arndl5558e1" path="res://assets/graphic/Credits.png" id="1_vmlua"]
+[ext_resource type="Texture2D" uid="uid://7xksc5yfcm7f" path="res://assets/graphic/sprites death ombres.png" id="3_jfivg"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -9,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jb22m")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -18,3 +21,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_vmlua")
+
+[node name="SpritesDeathOmbres" type="Sprite2D" parent="."]
+position = Vector2(1100, 669)
+texture = ExtResource("3_jfivg")

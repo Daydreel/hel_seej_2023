@@ -7,8 +7,13 @@ extends Control
 func fade_in():
 	anim_p.play("fade_in")
 
+
 func fade_out():
 	anim_p.play("fade_out")
+
+
+func goto_menu():
+	goto_scene(scenes[2].resource_path)
 
 
 func goto_scene(path : String) -> void:
