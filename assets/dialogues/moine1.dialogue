@@ -1,10 +1,13 @@
 ~ dialogue
 
 Nathan: Es-tu un homme vertueux ?
+Nathan: Je suis deuxième ligne
 - Oui
 	Nathan : Nous allons mettre cette vertu à l'épreuve
 - Non
 	Nathan : Je ne peux t'accepter dans mon église
+	Nathan: Je suis deuxième ligne
+	Nathan: Je suis troisième ligne
 
 Nathan: L'aigle, fier de son vol élevé, regarde-t-il avec condescendance les créatures d'en bas ou vole-t-il haut pour être plus près du Ciel ?
 - Il se vante d'être au-dessus des autres créatures.

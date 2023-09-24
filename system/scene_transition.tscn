@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://coweiibe3giyu"]
+[gd_scene load_steps=15 format=3 uid="uid://coweiibe3giyu"]
 
 [ext_resource type="Script" path="res://SceneTransition.gd" id="1_bqc4b"]
 [ext_resource type="PackedScene" uid="uid://bpil8c86hkndr" path="res://UI/Screens/splash_screen.tscn" id="2_ltuq5"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://t8aoe0oi6n12" path="res://UI/Screens/love_letter.tscn" id="5_rsjfn"]
 [ext_resource type="PackedScene" uid="uid://g2t3ea4nqat2" path="res://UI/Screens/game_over.tscn" id="7_0kpau"]
 [ext_resource type="PackedScene" uid="uid://qaey2kh2aayf" path="res://UI/Screens/end_screen.tscn" id="8_chcce"]
+[ext_resource type="PackedScene" uid="uid://rsc00gytdcyq" path="res://UI/Screens/credits.tscn" id="9_kvpr3"]
 
 [sub_resource type="Animation" id="Animation_b8ker"]
 length = 0.001
@@ -110,7 +111,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bqc4b")
-scenes = Array[PackedScene]([ExtResource("2_ltuq5"), ExtResource("3_ivlhd"), ExtResource("4_pq51d"), ExtResource("5_rsjfn"), ExtResource("5_nqp68"), ExtResource("7_0kpau"), ExtResource("8_chcce")])
+scenes = Array[PackedScene]([ExtResource("2_ltuq5"), ExtResource("3_ivlhd"), ExtResource("4_pq51d"), ExtResource("5_rsjfn"), ExtResource("5_nqp68"), ExtResource("7_0kpau"), ExtResource("8_chcce"), ExtResource("9_kvpr3")])
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

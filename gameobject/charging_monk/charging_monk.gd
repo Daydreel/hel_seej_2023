@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+const SPEED = 150.0
 func _ready():
 	EventBus.admission.connect(_on_EventBus_admission)
 	set_physics_process(false)

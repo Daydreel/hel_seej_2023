@@ -1,7 +1,93 @@
-[gd_scene load_steps=3 format=3 uid="uid://qaey2kh2aayf"]
+[gd_scene load_steps=7 format=3 uid="uid://qaey2kh2aayf"]
 
 [ext_resource type="Script" path="res://UI/Screens/end_screen.gd" id="1_aacua"]
 [ext_resource type="Texture2D" uid="uid://cp31wddtsqhh3" path="res://assets/graphic/MONSTRE.png" id="1_geiex"]
+[ext_resource type="Texture2D" uid="uid://dqyqciqw5857b" path="res://assets/graphic/heart attack.png" id="2_ck01d"]
+
+[sub_resource type="Animation" id="Animation_o66tw"]
+resource_name = "scary"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("doggo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.3, 1.4, 1.7, 2.5, 2.8, 3.1, 4.1, 4.6),
+"transitions": PackedFloat32Array(1, 0.00306478, 1, 1, 1, 0.297302, 1, 2, 2),
+"update": 0,
+"values": [Color(0.0666667, 0.0666667, 0.0666667, 1), Color(0.0666667, 0.0666667, 0.0666667, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("heart_attack:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.7),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("doggo:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.7, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 3, 4.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true, false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_ab67j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("doggo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0666667, 0.0666667, 0.0666667, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("heart_attack:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("doggo:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_64ym6"]
+_data = {
+"RESET": SubResource("Animation_ab67j"),
+"scary": SubResource("Animation_o66tw")
+}
 
 [node name="EndScreen" type="Control"]
 layout_mode = 3
@@ -12,15 +98,22 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_aacua")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="heart_attack" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_ck01d")
+
+[node name="doggo" type="TextureRect" parent="."]
+modulate = Color(0.0666667, 0.0666667, 0.0666667, 1)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_geiex")
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
-one_shot = true
-autostart = true
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_64ym6")
+}
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
