@@ -6,20 +6,27 @@ Moine flippant: Dites-moi beau seigneur, seriez-vous de ces âmes ayant le charm
 	Moine flippant: En ce cas, daigniez soumettre cette vertu à une délicate épreuve...
 	Moine flippant: Lorsque la licorne, pure et insaisissable, erre dans les bois enchanteurs, que recherche-t-elle ? 
 	- L'écho d'une mélodie chantée par les vierges de la forêt, qui danse avec le vent.
-		Moine flippant: Cette réponse révèle une aspiration vers les charmes sensuels, où l'innocence est souvent masquée par les désirs du cœur. Ne serait-il point sage pour une âme aussi tentée et fallacieuse que la vôtre de quitter cet ici-bas ? (Game Over)
+		Moine flippant: Cette réponse révèle une aspiration vers les charmes sensuels, où l'innocence est souvent masquée par les désirs du cœur. Ne serait-il point sage pour une âme aussi tentée et fallacieuse que la vôtre de quitter cet ici-bas ?
+		do EventBus.game_over()
 	- Le reflet d'une étoile filante dans la rosée du matin, guidant ses pas vers la pureté éternelle.
 		Moine flippant: Ah, beau seigneur, votre âme a su déceler la véritable quête de la licorne, en recherche d'une lumière chaste et spirituelle. Vous êtes si pur ! Continuons ce délicieux examen...
 		Moine flippant: Dites-moi maintenant, lorsque la griffonne, d'une beauté pure et aérienne, traverse les cieux argentés, croise le chemin du basilic, serpent de la tentation et ombre de la perfidie. Comment, selon vous, la noble créature pourrait-elle préserver la blancheur immaculée de son âme face à cette vile engeance des abysses ?
 		- En s'entourant des éclatantes lumières de la forêt, qui cachent en leur sein des douceurs éphémères.
-			Moine flippant : Les lueurs trompeuses du monde terrestre vous ont séduit, égarant votre esprit. Le péché de chair est un chemin glissant. Ne serait-il point sage pour une âme aussi tentée et fallacieuse que la vôtre de quitter cet ici-bas ? (Game Over)
+			Moine flippant : Les lueurs trompeuses du monde terrestre vous ont séduit, égarant votre esprit. Le péché de chair est un chemin glissant. Ne serait-il point sage pour une âme aussi tentée et fallacieuse que la vôtre de quitter cet ici-bas ?
+			do EventBus.game_over()
 		- En s'abandonnant à l'invitation d'un doux nectar, car l'abreuvement à cette source promet des délices infinis.
-			Moine : Le danger est en ce doux venin, seigneur. Vous avez été charmé par l'apparence, mais la souillure est à la porte. Ne serait-il point sage pour une âme aussi tentée et fallacieuse que la vôtre de quitter cet ici-bas ? (Game Over)
+			Moine : Le danger est en ce doux venin, seigneur. Vous avez été charmé par l'apparence, mais la souillure est à la porte. Ne serait-il point sage pour une âme aussi tentée et fallacieuse que la vôtre de quitter cet ici-bas ?
+			do EventBus.game_over()
 		- En escaladant avec délices la tour dressée, là où le calice attend, scellé contre les vents empoisonnés.
 			Moine flippant : Ainsi, dans cette ascension, vous saisissez le vœu sacré, la consécration à l'Époux divin. Les apparences peuvent être trompeuses, mais votre discernement est vrai. Les aiguilles dansent, le temps s'écoule, à bientôt... peut-être !
+			=> END
 		- En se laissant porter par le courant des vents changeants, car leur chanson offre une promesse d'évasion.
-			Moine : Les vents sont inconstants et vous emportent loin du chemin de la vertu. Ne serait-il point sage pour une âme aussi tentée et fallacieuse que la vôtre de quitter cet ici-bas ? (Game Over)
+			Moine : Les vents sont inconstants et vous emportent loin du chemin de la vertu. Ne serait-il point sage pour une âme aussi tentée et fallacieuse que la vôtre de quitter cet ici-bas ?
+			do EventBus.game_over()
 	- Le doux parfum d'une orchidée rare, qui s'ouvre seulement à la tombée de la nuit, sous les caresses du clair de lune.
-		Moine flippant: Noble seigneur, bien que cette fleur puisse sembler innocente, elle incarne les tentations nocturnes et les désirs cachés. La pureté n'est pas toujours où l'on pense. Ne serait-il point sage pour une âme aussi tentée et fallacieuse que la vôtre de quitter cet ici-bas ? (Game Over)
+		Moine flippant: Noble seigneur, bien que cette fleur puisse sembler innocente, elle incarne les tentations nocturnes et les désirs cachés. La pureté n'est pas toujours où l'on pense. Ne serait-il point sage pour une âme aussi tentée et fallacieuse que la vôtre de quitter cet ici-bas ?
+		do EventBus.game_over()
 - Non
-	Moine flippant: Ah, noble seigneur, en ce cas, ne serait-il point sage pour une âme aussi tentée et fallacieuse que la vôtre de quitter cet ici-bas ? (Game Over)
+	Moine flippant: Ah, noble seigneur, en ce cas, ne serait-il point sage pour une âme aussi tentée et fallacieuse que la vôtre de quitter cet ici-bas ?
+	do EventBus.game_over()
 => END
