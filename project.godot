@@ -65,7 +65,7 @@ dialogue_default_action={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://assets/dialogues/d1_test.dialogue", "res://assets/dialogues/moine2.dialogue", "res://assets/dialogues/moine1.dialogue", "res://assets/dialogues/moine3.dialogue", "res://assets/dialogues/moine2VRAI.dialogue")
+locale/translations_pot_files=PackedStringArray("res://assets/dialogues/d1_test.dialogue", "res://assets/dialogues/moine2.dialogue", "res://assets/dialogues/moine1.dialogue", "res://assets/dialogues/moine3.dialogue", "res://assets/dialogues/moine2VRAI.dialogue", "res://assets/dialogues/moine4.dialogue")
 
 [rendering]
 

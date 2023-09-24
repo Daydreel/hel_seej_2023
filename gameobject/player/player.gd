@@ -12,6 +12,8 @@ var backward_move : bool = false
 var area_selected : Area2D
 
 func _ready():
+	EventBus.dialogue_initiated.connect(_on_EventBus_dialogue_initiated)
+	EventBus.dialogue_ended.connect(_on_EventBus_dialogue_ended)
 	_cinema_mode_on()
 
 func _physics_process(_delta: float) -> void:
@@ -65,3 +67,10 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 	area.get_parent().emit_signal("target_interact", false)
 	if area_selected == area:
 		area_selected = null
+
+func _on_EventBus_dialogue_initiated() -> void:
+	set_physics_process(false)
+
+
+func _on_EventBus_dialogue_ended() -> void:
+	set_physics_process(true)

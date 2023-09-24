@@ -1,6 +1,8 @@
 extends Control
 class_name DialogueBox
 
+var _dia_buttons_path = preload("res://UI/Components/dialogue_buttons.tscn")
+
 @onready var dialogue_label : DialogueLabel = $CL/Dialogue/MC/DialogueLabel
 @onready var character_label : RichTextLabel = $CL/Character/MC/CharacterLabel
 @onready var flow_container : FlowContainer = $CL/FlowContainer
@@ -8,12 +10,15 @@ class_name DialogueBox
 var dialogue_path : String
 var r_dialogue : DialogueResource
 var dialogue_line
+var monk_texture : Texture
+@onready var monk_image : TextureRect = $CL/MonkImage
 
 var await_answer : bool = false
 
 func _ready():
 	EventBus.admission.connect(_on_EventBus_admission)
 	
+	monk_image.texture = monk_texture
 	r_dialogue = load(dialogue_path)
 	start_dialogue("dialogue")
 	display_dialogue()
@@ -34,6 +39,7 @@ func _input(event):
 
 
 func start_dialogue(title : String):
+	EventBus.dialogue_initiated.emit()
 	dialogue_line = await r_dialogue.get_next_dialogue_line(title)
 
 
@@ -54,7 +60,7 @@ func display_dialogue():
 func display_choices():
 	await_answer = true
 	for choice in dialogue_line.responses:
-		var button = Button.new()
+		var button = _dia_buttons_path.instantiate()
 		button.text = choice.text
 		flow_container.add_child(button)
 		button.pressed.connect(_on_button_pressed.bind(choice))
@@ -74,6 +80,7 @@ func next(next_id: String) -> void:
 
 
 func end_dialogue():
+	EventBus.dialogue_ended.emit()
 	queue_free()
 
 

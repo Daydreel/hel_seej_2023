@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://duenlliiqkuwg"]
+[gd_scene load_steps=16 format=3 uid="uid://duenlliiqkuwg"]
 
 [ext_resource type="Texture2D" uid="uid://ler6s3clh6ua" path="res://assets/graphic/Fond_Eglise_1 final.png" id="1_0ufeq"]
 [ext_resource type="Texture2D" uid="uid://cduywkq8fpayp" path="res://assets/graphic/Fond_Eglise_2_final.png" id="2_5dwi6"]
@@ -6,8 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://dqukyx2i1rgkd" path="res://gameobject/moine/moine.tscn" id="4_sc42c"]
 [ext_resource type="PackedScene" uid="uid://6wcsar3ejvvn" path="res://gameobject/cercueil/cercueil.tscn" id="5_b4and"]
 [ext_resource type="PackedScene" uid="uid://dtxtqfjo8blg4" path="res://gameobject/charging_monk/charging_monk.tscn" id="5_eckrs"]
+[ext_resource type="Texture2D" uid="uid://g3p72wwahoru" path="res://assets/graphic/monk_faces/moine 1.png" id="5_yngwp"]
 [ext_resource type="PackedScene" uid="uid://jp3ui8rk7h2l" path="res://gameobject/door/door.tscn" id="6_lofp7"]
+[ext_resource type="Texture2D" uid="uid://uahsp2fe2idu" path="res://assets/graphic/monk_faces/moine 2 sans visage.png" id="6_sgmnq"]
 [ext_resource type="PackedScene" uid="uid://dhej0bg4dwt21" path="res://gameobject/props/light_candace.tscn" id="7_13dwb"]
+[ext_resource type="Texture2D" uid="uid://b8pxg1847lgm7" path="res://assets/graphic/monk_faces/moine 3 sans visage.png" id="7_pcdwf"]
+[ext_resource type="Texture2D" uid="uid://otd6ibs705tr" path="res://assets/graphic/monk_faces/moine creepy +++.png" id="8_w8u18"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_f7qi6"]
 polygon = PackedVector2Array(-330, 4, -328, 1, -332, 1)
@@ -39,7 +43,7 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_5dwi6")
 
 [node name="Player" parent="." instance=ExtResource("3_r6hyd")]
-position = Vector2(-23, 9)
+position = Vector2(-25, 10)
 speed = 30.0
 
 [node name="Moines" type="Node2D" parent="."]
@@ -47,18 +51,22 @@ speed = 30.0
 [node name="Moine" parent="Moines" instance=ExtResource("4_sc42c")]
 position = Vector2(36, 9)
 dialogue_path = "res://assets/dialogues/moine1.dialogue"
+monk_texture = ExtResource("5_yngwp")
 
 [node name="Moine2" parent="Moines" instance=ExtResource("4_sc42c")]
 position = Vector2(160, 8)
 dialogue_path = "res://assets/dialogues/moine2.dialogue"
+monk_texture = ExtResource("6_sgmnq")
 
 [node name="Moine3" parent="Moines" instance=ExtResource("4_sc42c")]
 position = Vector2(221, 14)
 dialogue_path = "res://assets/dialogues/moine3.dialogue"
+monk_texture = ExtResource("7_pcdwf")
 
 [node name="MoineFinal" parent="Moines" instance=ExtResource("4_sc42c")]
 position = Vector2(315, 11)
-dialogue_path = "res://assets/dialogues/d1_test.dialogue"
+dialogue_path = "res://assets/dialogues/moine4.dialogue"
+monk_texture = ExtResource("8_w8u18")
 
 [node name="MoinesChargeant" type="Node2D" parent="."]
 

@@ -16,7 +16,6 @@ shader_parameter/inside = false
 shader_parameter/add_margins = false
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dmy10"]
-radius = 19.105
 
 [node name="Moine" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
 collision_layer = 2

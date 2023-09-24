@@ -1,0 +1,15 @@
+~ dialogue
+
+Moine flippant: Monseigneur, l'intimité de cet office des défunts que nous célébrons avec une ferveur... particulière.
+- Au nom de qui résonnent ces chants funèbres, Mon Père?
+	Moine flippant: C’est pour le Seigneur (NOM DU JOUEUR), Gentilhomme de ce voisinage qui est mort aujourd’hui.
+	- Vous vous abusez car je sais qu’il est en vie !
+		Moine flippant: C’est vous-mêmes qui vous vous trompez, pensant qu’il soit en vie, car il est véritablement mort.
+		do DataPlayer.is_trapped = true
+		- Oui
+		- Oui
+		- Oui
+		- Oui
+		- Oui
+		- Oui
+=> END
