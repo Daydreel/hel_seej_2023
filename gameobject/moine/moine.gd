@@ -12,6 +12,9 @@ var node_name : String = "Moine"
 var player_looking : bool
 var _dialogue_box := preload("res://UI/Components/dialogue_box.tscn")
 
+@export var music_state : int
+@export var music_change : bool
+
 func interact_available(state : bool) -> void:
 	player_looking = state
 	sprite.material.set_shader_parameter("width", 8.0 if state else 0.0)
@@ -29,3 +32,6 @@ func _unhandled_key_input(_event: InputEvent) -> void:
 		dialogue_box.dialogue_path = dialogue_path
 		dialogue_box.monk_texture = monk_texture
 		get_tree().root.add_child(dialogue_box)
+		
+		if music_change:
+			MusicManager.music_transition(music_state)

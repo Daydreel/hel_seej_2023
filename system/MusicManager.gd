@@ -2,7 +2,7 @@ extends AudioStreamPlayer
 
 
 
-var music : Array[AudioStreamOggVorbis] = [preload("res://assets/audio/MENU.ogg"), preload("res://assets/audio/Eglise-niveau_0.ogg"), preload("res://assets/audio/Eglise_niveau_1.ogg"), preload("res://assets/audio/Eglise_niveau_2.ogg"), preload("res://assets/audio/END.ogg")]
+var music : Array[AudioStreamOggVorbis] = [preload("res://assets/audio/MENU.ogg"), preload("res://assets/audio/Eglise-niveau_0.ogg"), preload("res://assets/audio/Eglise_niveau_1.ogg"), preload("res://assets/audio/Eglise_niveau_2.ogg"), preload("res://assets/audio/Eglise_niveau_Max.ogg"), preload("res://assets/audio/END.ogg")]
 @export var audio_stream_2 : AudioStreamPlayer
 @export var transition_player : AnimationPlayer
 var back : bool = false

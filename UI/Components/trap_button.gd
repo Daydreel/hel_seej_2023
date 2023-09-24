@@ -10,7 +10,7 @@ func _physics_process(_delta):
 		scale *= 1.005
 
 func _on_mouse_entered():
-	text = "AVEU"
+	text = "J'AVOUE !"
 	trap = true
 
 

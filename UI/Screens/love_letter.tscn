@@ -26,22 +26,20 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_wiur3")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -945.0
-offset_top = -120.0
-offset_right = 945.0
-offset_bottom = 120.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 149.0
+offset_right = -149.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_obyr8")
+theme_override_font_sizes/font_size = 44
 text = "
 En cette noble contrée de France, au siècle dix-septième, vous, Cindasuindo, illustre gentilhomme d'Espagne, avez allumé en votre cœur une flamme dévorante pour Athanagilde à l'éminente beauté.
 Bien que sa condition de religieuse le défende, depuis des lunes vous lui expédiez des lettres passionnées.
 Aujourd'hui, elle vous a répondu...
+
 
 Mon très cher Cindasuindo,
 
@@ -50,6 +48,8 @@ Vos écrits, imprégnés d'ardeur, parviennent à éveiller en mon cœur des ém
 Cette passion qui m'étreint me contraint, non sans une certaine retenue, à solliciter votre présence en la chapelle de l'Abbaye, précisément lorsque le clocher sonnera le douzième coup de minuit.
 Que ce lieu sacré soit le témoin silencieux de nos âmes s'unissant dans un échange, où, dans l'observance stricte de la vertu qui m'incombe, brûle un désir que ma plume peine à confesser.
 Adieu,"
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)

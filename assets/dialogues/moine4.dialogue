@@ -2,14 +2,15 @@
 
 Moine flippant: Monseigneur, l'intimité de cet office des défunts que nous célébrons avec une ferveur... particulière.
 - Au nom de qui résonnent ces chants funèbres, Mon Père?
-	Moine flippant: C’est pour le Seigneur (NOM DU JOUEUR), Gentilhomme de ce voisinage qui est mort aujourd’hui.
+	Moine flippant: C’est pour le Seigneur Cindasuindo, gentilhomme de ce voisinage qui est mort aujourd’hui.
 	- Vous vous abusez car je sais qu’il est en vie !
 		Moine flippant: C’est vous-mêmes qui vous vous trompez, pensant qu’il soit en vie, car il est véritablement mort.
+		Moine flippant: Répondez maintenant : lorsque la vierge sent un vent perfide glisser entre les murs sacrés du couvent et susurrer des promesses de caresses impudiques, que doit-elle faire ?
 		do DataPlayer.is_trapped = true
-		- Oui
-		- Oui
-		- Oui
-		- Oui
-		- Oui
-		- Oui
+		- Prier !
+		- Méditer !
+		- Chanter !
+		- Jeûner !
+		- Confesser !
+		- Resister !
 => END
