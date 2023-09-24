@@ -13,6 +13,7 @@ var dialogue_line
 var monk_texture : Texture
 @onready var monk_image : TextureRect = $CL/MonkImage
 
+var can_interact = false
 var await_answer : bool = false
 
 func _ready():
@@ -25,7 +26,7 @@ func _ready():
 
 
 func _input(event):
-	if event.is_action_pressed("dialogue_default_action") :
+	if event.is_action_pressed("dialogue_default_action") && can_interact:
 		if await_answer :
 			return
 		
@@ -44,6 +45,8 @@ func start_dialogue(title : String):
 
 
 func display_dialogue():
+	$Timer.start()
+	can_interact = false
 	if !dialogue_line :
 		end_dialogue()
 		return
@@ -94,3 +97,8 @@ func _on_button_pressed(choice : DialogueResponse):
 
 func _on_EventBus_admission():
 	end_dialogue()
+
+
+func _on_timer_timeout():
+	can_interact = true
+	
