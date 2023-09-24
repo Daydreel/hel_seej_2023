@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bckam8xy8wowg"]
+[gd_scene load_steps=4 format=3 uid="uid://bckam8xy8wowg"]
 
 [ext_resource type="Script" path="res://UI/Screens/intro.gd" id="1_w7i6t"]
+[ext_resource type="Theme" uid="uid://755luokyxafl" path="res://assets/themes/main_theme.theme" id="2_k1c5j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgcbn"]
 bg_color = Color(0.176471, 0.654902, 0.827451, 1)
@@ -33,6 +34,7 @@ offset_top = 175.0
 offset_right = 20.0
 offset_bottom = 198.0
 grow_horizontal = 2
+theme = ExtResource("2_k1c5j")
 text = "FRANCE, 17È SIÈCLE, VOUS BRÛLEZ D'AMOUR POUR L'ADMIRABLE ANGÉLIQUE, QUEL EST VOTRE NOM ?"
 
 [node name="LineEditName" type="LineEdit" parent="."]
@@ -49,6 +51,7 @@ offset_right = 33.5313
 offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_k1c5j")
 
 [node name="VBKeyboard" type="HFlowContainer" parent="."]
 custom_minimum_size = Vector2(600, 150)
@@ -64,6 +67,7 @@ offset_right = 20.0
 offset_bottom = 168.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_k1c5j")
 theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
 alignment = 1
@@ -81,6 +85,7 @@ offset_right = 77.0
 offset_bottom = -47.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("2_k1c5j")
 text = "C_EST_MON_NOM !"
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

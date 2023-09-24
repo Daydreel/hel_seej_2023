@@ -12,7 +12,7 @@ var _dialogue_box := preload("res://UI/Components/dialogue_box.tscn")
 
 func interact_available(state : bool) -> void:
 	player_looking = state
-	sprite.modulate = Color.BROWN if state else Color.WHITE
+	sprite.material.set_shader_parameter("width", 8.0 if state else 0.0)
 
 
 func _ready() -> void:

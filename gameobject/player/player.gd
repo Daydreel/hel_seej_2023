@@ -1,7 +1,6 @@
 extends CharacterBody2D
 class_name Player
 
-@onready var camera : Camera2D = preload("res://gameobject/player/camera_player.tscn").instantiate()
 @export var area_self : Area2D
 @export var sprite : Sprite2D
 @export var anim_state : AnimationTree
@@ -12,13 +11,8 @@ var backward_move : bool = false
 
 var area_selected : Area2D
 
-func _ready() -> void:
-#	get_parent().add_child.call_deferred(camera)
-	add_child(camera)
-
-
-#func _process(delta: float) -> void:
-#	camera.position = self.position
+func _ready():
+	_cinema_mode_on()
 
 func _physics_process(_delta: float) -> void:
 
@@ -29,7 +23,7 @@ func _physics_process(_delta: float) -> void:
 	
 	
 	if absf(direction) > 0.001:
-		sprite.flip_h = true if direction < 0.0 else false
+		sprite.get_parent().scale.x = -1.0 if direction < 0.0 else 1.0
 		
 		anim_state["parameters/conditions/idle"] = false
 		anim_state["parameters/conditions/running"] = true
@@ -51,7 +45,9 @@ func _process(_delta: float) -> void:
 		area_selected = area_target
 		area_target.get_parent().emit_signal("target_interact", true)
 
-
+func _cinema_mode_on():
+	$Camera2D/CanvasLayer/ColorRect.show()
+	$Camera2D/CanvasLayer/ColorRect2.show()
 
 
 func _on_area_2d_area_entered(_area: Area2D) -> void:

@@ -17,13 +17,22 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+EventBus="*res://system/EventBus.gd"
 SceneTransition="*res://system/scene_transition.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 DataPlayer="*res://system/DataPlayer.gd"
 
+
 [dialogue_manager]
 
 general/wrap_lines=true
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+
 
 [editor_plugins]
 
