@@ -24,121 +24,132 @@ gradient = SubResource("Gradient_u6y6g")
 
 [node name="level" type="Node2D"]
 
-[node name="FondEglise1" type="Sprite2D" parent="."]
+[node name="EnvironmentBack" type="Node2D" parent="."]
+
+[node name="FondEglise1" type="Sprite2D" parent="EnvironmentBack"]
 modulate = Color(0.5, 0.5, 0.5, 1)
 position = Vector2(161, 0)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_0ufeq")
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="EnvironmentBack"]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="EnvironmentBack/ParallaxBackground"]
 position = Vector2(-63, 0)
 motion_scale = Vector2(0.9, 0.9)
 motion_offset = Vector2(0, 4.035)
 
-[node name="FondEglise2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="FondEglise2" type="Sprite2D" parent="EnvironmentBack/ParallaxBackground/ParallaxLayer"]
 position = Vector2(249, 0)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_5dwi6")
 
-[node name="Player" parent="." instance=ExtResource("3_r6hyd")]
+[node name="Lights" type="Node2D" parent="EnvironmentBack"]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="EnvironmentBack/Lights"]
+position = Vector2(347, -14)
+occluder = SubResource("OccluderPolygon2D_f7qi6")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="EnvironmentBack/Lights"]
+position = Vector2(426, -14)
+occluder = SubResource("OccluderPolygon2D_f7qi6")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="EnvironmentBack/Lights"]
+position = Vector2(506, -14)
+occluder = SubResource("OccluderPolygon2D_f7qi6")
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="EnvironmentBack/Lights"]
+position = Vector2(586, -13)
+occluder = SubResource("OccluderPolygon2D_f7qi6")
+
+[node name="PointLight2D7" parent="EnvironmentBack/Lights" instance=ExtResource("7_13dwb")]
+position = Vector2(347, -16)
+scale = Vector2(0.936357, 0.936357)
+
+[node name="PointLight2D8" parent="EnvironmentBack/Lights" instance=ExtResource("7_13dwb")]
+position = Vector2(176, -20)
+scale = Vector2(0.936357, 0.936357)
+
+[node name="PointLight2D9" parent="EnvironmentBack/Lights" instance=ExtResource("7_13dwb")]
+position = Vector2(495.707, -34.8544)
+scale = Vector2(0.876764, 0.876764)
+
+[node name="PointLight2D10" parent="EnvironmentBack/Lights" instance=ExtResource("7_13dwb")]
+position = Vector2(96, -17)
+scale = Vector2(0.936357, 0.936357)
+
+[node name="PointLight2D11" parent="EnvironmentBack/Lights" instance=ExtResource("7_13dwb")]
+position = Vector2(17, -18)
+scale = Vector2(0.936357, 0.936357)
+
+[node name="PointLight2D12" parent="EnvironmentBack/Lights" instance=ExtResource("7_13dwb")]
+position = Vector2(-38, -10)
+scale = Vector2(0.936357, 0.936357)
+
+[node name="PointLight2D13" parent="EnvironmentBack/Lights" instance=ExtResource("7_13dwb")]
+position = Vector2(256, -18)
+scale = Vector2(0.936357, 0.936357)
+
+[node name="EndColorChurch" type="Sprite2D" parent="EnvironmentBack"]
+position = Vector2(418, 1)
+texture = SubResource("GradientTexture2D_i7tl7")
+
+[node name="StartColorChurch2" type="Sprite2D" parent="EnvironmentBack"]
+position = Vector2(-114, 0)
+scale = Vector2(1.5625, 1)
+texture = SubResource("GradientTexture2D_i7tl7")
+
+[node name="GameObjects" type="Node2D" parent="."]
+
+[node name="Player" parent="GameObjects" instance=ExtResource("3_r6hyd")]
 position = Vector2(-25, 10)
 speed = 30.0
 
-[node name="Moines" type="Node2D" parent="."]
+[node name="Moines" type="Node2D" parent="GameObjects"]
 
-[node name="Moine" parent="Moines" instance=ExtResource("4_sc42c")]
+[node name="Moine" parent="GameObjects/Moines" instance=ExtResource("4_sc42c")]
 position = Vector2(36, 9)
 dialogue_path = "res://assets/dialogues/moine1.dialogue"
 monk_texture = ExtResource("5_yngwp")
 music_state = 1
 
-[node name="Moine2" parent="Moines" instance=ExtResource("4_sc42c")]
+[node name="Moine2" parent="GameObjects/Moines" instance=ExtResource("4_sc42c")]
 position = Vector2(160, 8)
 dialogue_path = "res://assets/dialogues/moine2.dialogue"
 monk_texture = ExtResource("6_sgmnq")
 music_state = 2
 music_change = true
 
-[node name="Moine3" parent="Moines" instance=ExtResource("4_sc42c")]
+[node name="Moine3" parent="GameObjects/Moines" instance=ExtResource("4_sc42c")]
 position = Vector2(221, 14)
 dialogue_path = "res://assets/dialogues/moine3.dialogue"
 monk_texture = ExtResource("7_pcdwf")
 music_state = 3
 music_change = true
 
-[node name="MoineFinal" parent="Moines" instance=ExtResource("4_sc42c")]
+[node name="MoineFinal" parent="GameObjects/Moines" instance=ExtResource("4_sc42c")]
 position = Vector2(315, 11)
 dialogue_path = "res://assets/dialogues/moine4.dialogue"
 monk_texture = ExtResource("8_w8u18")
 music_state = 4
 music_change = true
 
-[node name="MoinesChargeant" type="Node2D" parent="."]
+[node name="MoinesChargeantBackground" type="Node2D" parent="GameObjects"]
 
-[node name="ChargingMonk2" parent="MoinesChargeant" instance=ExtResource("5_eckrs")]
+[node name="ChargingMonk2" parent="GameObjects/MoinesChargeantBackground" instance=ExtResource("5_eckrs")]
 position = Vector2(335, 4)
 
-[node name="ChargingMonk" parent="MoinesChargeant" instance=ExtResource("5_eckrs")]
+[node name="ChargingMonk" parent="GameObjects/MoinesChargeantBackground" instance=ExtResource("5_eckrs")]
 position = Vector2(342, 6)
 
-[node name="Cercueil" parent="." instance=ExtResource("5_b4and")]
+[node name="Cercueil" parent="GameObjects" instance=ExtResource("5_b4and")]
 position = Vector2(364, 13)
 
-[node name="ChargingMonk3" parent="." instance=ExtResource("5_eckrs")]
+[node name="ChargingMonk3" parent="GameObjects" instance=ExtResource("5_eckrs")]
 position = Vector2(343, 16)
 
-[node name="ChargingMonk4" parent="." instance=ExtResource("5_eckrs")]
+[node name="ChargingMonk4" parent="GameObjects" instance=ExtResource("5_eckrs")]
 position = Vector2(337, 17)
 
-[node name="Door" parent="." instance=ExtResource("6_lofp7")]
+[node name="Door" parent="GameObjects" instance=ExtResource("6_lofp7")]
 position = Vector2(-59, 0)
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-position = Vector2(347, -14)
-occluder = SubResource("OccluderPolygon2D_f7qi6")
-
-[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
-position = Vector2(426, -14)
-occluder = SubResource("OccluderPolygon2D_f7qi6")
-
-[node name="LightOccluder2D3" type="LightOccluder2D" parent="."]
-position = Vector2(506, -14)
-occluder = SubResource("OccluderPolygon2D_f7qi6")
-
-[node name="LightOccluder2D4" type="LightOccluder2D" parent="."]
-position = Vector2(586, -13)
-occluder = SubResource("OccluderPolygon2D_f7qi6")
-
-[node name="PointLight2D7" parent="." instance=ExtResource("7_13dwb")]
-position = Vector2(347, -16)
-scale = Vector2(0.936357, 0.936357)
-
-[node name="PointLight2D8" parent="." instance=ExtResource("7_13dwb")]
-position = Vector2(176, -20)
-scale = Vector2(0.936357, 0.936357)
-
-[node name="PointLight2D9" parent="." instance=ExtResource("7_13dwb")]
-position = Vector2(495.707, -34.8544)
-scale = Vector2(0.876764, 0.876764)
-
-[node name="PointLight2D10" parent="." instance=ExtResource("7_13dwb")]
-position = Vector2(96, -17)
-scale = Vector2(0.936357, 0.936357)
-
-[node name="PointLight2D11" parent="." instance=ExtResource("7_13dwb")]
-position = Vector2(17, -18)
-scale = Vector2(0.936357, 0.936357)
-
-[node name="PointLight2D12" parent="." instance=ExtResource("7_13dwb")]
-position = Vector2(-38, -10)
-scale = Vector2(0.936357, 0.936357)
-
-[node name="PointLight2D13" parent="." instance=ExtResource("7_13dwb")]
-position = Vector2(256, -18)
-scale = Vector2(0.936357, 0.936357)
-
-[node name="EndColorChurch" type="Sprite2D" parent="."]
-position = Vector2(418, 1)
-texture = SubResource("GradientTexture2D_i7tl7")

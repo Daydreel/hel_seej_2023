@@ -93,5 +93,10 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_xyq36")
 theme_override_styles/hover = SubResource("StyleBoxTexture_o2jil")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_g1hoq")
 
+[node name="ButtonQuit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
 [connection signal="pressed" from="VBoxContainer/ButtonPlay" to="." method="_on_button_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonCredit" to="." method="_on_button_credit_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonQuit" to="." method="_on_button_quit_pressed"]
