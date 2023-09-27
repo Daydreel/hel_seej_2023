@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://ckps5523pd70u" path="res://assets/graphic/sprites moines final.png" id="3_67tn2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0uucs"]
+radius = 50.0
+height = 500.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ar3nh"]
 resource_local_to_scene = true
@@ -16,24 +18,25 @@ shader_parameter/inside = false
 shader_parameter/add_margins = false
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dmy10"]
+radius = 200.0
 
-[node name="Moine" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
+[node name="Moine" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_3vmfc")
-sprite = NodePath("Sprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_0uucs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_ar3nh")
-scale = Vector2(0.06, 0.06)
 texture = ExtResource("3_67tn2")
 flip_h = true
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="AggroRange" type="Area2D" parent="."]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AggroRange"]
 shape = SubResource("CircleShape2D_dmy10")
 debug_color = Color(1, 0.6, 0.701961, 0.419608)
+
+[connection signal="area_entered" from="AggroRange" to="." method="_on_aggro_range_area_entered"]

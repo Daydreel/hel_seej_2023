@@ -3,9 +3,10 @@
 [ext_resource type="Script" path="res://gameobject/door/door.gd" id="1_pih4w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_py0h5"]
-size = Vector2(2, 10)
+size = Vector2(10, 200)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8dj6"]
+size = Vector2(50, 200)
 
 [node name="Door" type="StaticBody2D"]
 script = ExtResource("1_pih4w")
