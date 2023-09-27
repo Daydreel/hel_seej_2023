@@ -9,11 +9,11 @@ Moine froid : Seigneur, en cette nuit d'office sacré, il m'est impérieux de so
 		=> END
 	- Il éclipse le rival, risquant triomphe ou trépas.
 		Moine froid: Votre réponse éhontée trahit un manque flagrant de dévotion car le lion juste ne doit pas agir avec impulsion. Éloignez-vous sur-le-champ, avant que votre ombre ne corrompe davantage cette assemblée pieuse.
-		do EventBus.game_over()
+
 	- Il s'interroge sur la rivalité qui l'habite, voyant si ces cornes l'irritent ou attisent sa propre ardeur.
 		Moine froid: Votre réponse éhontée trahit un manque flagrant de piété car l'honnête lion se doit de résister au tumulte de ses émotions. Éloignez-vous sur-le-champ, avant que votre ombre ne corrompe davantage cette assemblée pieuse.
-		do EventBus.game_over()
+
 - Non
 	Moine froid : Seigneur, votre présence souille la solennité de notre office. Éloignez-vous sur-le-champ, avant que votre ombre ne corrompe davantage cette assemblée pieuse.
-	do EventBus.game_over()
+
 => END

@@ -119,7 +119,7 @@ music_state = 2
 music_change = true
 
 [node name="Moine3" parent="GameObjects/Moines" instance=ExtResource("4_sc42c")]
-position = Vector2(438, 155)
+position = Vector2(438, 94)
 scale = Vector2(0.7, 0.7)
 dialogue_path = "res://assets/dialogues/moine3.dialogue"
 monk_texture = ExtResource("7_pcdwf")
@@ -137,15 +137,15 @@ music_change = true
 [node name="MoinesChargeantBackground" type="Node2D" parent="GameObjects"]
 
 [node name="ChargingMonk2" parent="GameObjects/MoinesChargeantBackground" instance=ExtResource("5_eckrs")]
-position = Vector2(2015, -15)
+position = Vector2(2015, -3)
 scale = Vector2(-0.7, 0.7)
 
 [node name="ChargingMonk" parent="GameObjects/MoinesChargeantBackground" instance=ExtResource("5_eckrs")]
-position = Vector2(2118, 13)
+position = Vector2(2118, 20)
 scale = Vector2(-0.7, 0.7)
 
 [node name="Cercueil" parent="GameObjects" instance=ExtResource("5_b4and")]
-position = Vector2(2206, 149)
+position = Vector2(2206, 132)
 
 [node name="ChargingMonk3" parent="GameObjects" instance=ExtResource("5_eckrs")]
 position = Vector2(2257, 73)

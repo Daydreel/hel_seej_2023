@@ -8,6 +8,7 @@
 size = Vector2(100, 300)
 
 [node name="ChargingMonk" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_ualgd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
