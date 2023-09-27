@@ -1,0 +1,12 @@
+~ dialogue
+
+do DataPlayer.is_trapped = true
+Nathan: Es-tu vertueux ?
+- Oui
+- Oui
+- Oui
+- Oui
+- Oui
+- Oui
+
+=> END

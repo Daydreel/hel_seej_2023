@@ -1,0 +1,144 @@
+[gd_scene load_steps=16 format=3 uid="uid://duenlliiqkuwg"]
+
+[ext_resource type="Texture2D" uid="uid://ler6s3clh6ua" path="res://assets/graphic/Fond_Eglise_1 final.png" id="1_0ufeq"]
+[ext_resource type="Texture2D" uid="uid://cduywkq8fpayp" path="res://assets/graphic/Fond_Eglise_2_final.png" id="2_5dwi6"]
+[ext_resource type="PackedScene" uid="uid://ctauqquyt4r7x" path="res://gameobject/player/player.tscn" id="3_r6hyd"]
+[ext_resource type="PackedScene" uid="uid://dqukyx2i1rgkd" path="res://gameobject/moine/moine.tscn" id="4_sc42c"]
+[ext_resource type="PackedScene" uid="uid://6wcsar3ejvvn" path="res://gameobject/cercueil/cercueil.tscn" id="5_b4and"]
+[ext_resource type="PackedScene" uid="uid://dtxtqfjo8blg4" path="res://gameobject/charging_monk/charging_monk.tscn" id="5_eckrs"]
+[ext_resource type="Texture2D" uid="uid://g3p72wwahoru" path="res://assets/graphic/monk_faces/moine 1.png" id="5_yngwp"]
+[ext_resource type="PackedScene" uid="uid://jp3ui8rk7h2l" path="res://gameobject/door/door.tscn" id="6_lofp7"]
+[ext_resource type="Texture2D" uid="uid://uahsp2fe2idu" path="res://assets/graphic/monk_faces/moine 2 sans visage.png" id="6_sgmnq"]
+[ext_resource type="PackedScene" uid="uid://dhej0bg4dwt21" path="res://gameobject/props/light_candace.tscn" id="7_13dwb"]
+[ext_resource type="Texture2D" uid="uid://b8pxg1847lgm7" path="res://assets/graphic/monk_faces/moine 3 sans visage.png" id="7_pcdwf"]
+[ext_resource type="Texture2D" uid="uid://otd6ibs705tr" path="res://assets/graphic/monk_faces/moine creepy +++.png" id="8_w8u18"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_f7qi6"]
+polygon = PackedVector2Array(-330, 4, -328, 1, -332, 1)
+
+[sub_resource type="Gradient" id="Gradient_u6y6g"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_i7tl7"]
+gradient = SubResource("Gradient_u6y6g")
+
+[node name="level" type="Node2D"]
+
+[node name="FondEglise1" type="Sprite2D" parent="."]
+modulate = Color(0.5, 0.5, 0.5, 1)
+position = Vector2(161, 0)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_0ufeq")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-63, 0)
+motion_scale = Vector2(0.9, 0.9)
+motion_offset = Vector2(0, 4.035)
+
+[node name="FondEglise2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(249, 0)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_5dwi6")
+
+[node name="Player" parent="." instance=ExtResource("3_r6hyd")]
+position = Vector2(-25, 10)
+speed = 30.0
+
+[node name="Moines" type="Node2D" parent="."]
+
+[node name="Moine" parent="Moines" instance=ExtResource("4_sc42c")]
+position = Vector2(36, 9)
+dialogue_path = "res://assets/dialogues/moine1.dialogue"
+monk_texture = ExtResource("5_yngwp")
+music_state = 1
+
+[node name="Moine2" parent="Moines" instance=ExtResource("4_sc42c")]
+position = Vector2(160, 8)
+dialogue_path = "res://assets/dialogues/moine2.dialogue"
+monk_texture = ExtResource("6_sgmnq")
+music_state = 2
+music_change = true
+
+[node name="Moine3" parent="Moines" instance=ExtResource("4_sc42c")]
+position = Vector2(221, 14)
+dialogue_path = "res://assets/dialogues/moine3.dialogue"
+monk_texture = ExtResource("7_pcdwf")
+music_state = 3
+music_change = true
+
+[node name="MoineFinal" parent="Moines" instance=ExtResource("4_sc42c")]
+position = Vector2(315, 11)
+dialogue_path = "res://assets/dialogues/moine4.dialogue"
+monk_texture = ExtResource("8_w8u18")
+music_state = 4
+music_change = true
+
+[node name="MoinesChargeant" type="Node2D" parent="."]
+
+[node name="ChargingMonk2" parent="MoinesChargeant" instance=ExtResource("5_eckrs")]
+position = Vector2(335, 4)
+
+[node name="ChargingMonk" parent="MoinesChargeant" instance=ExtResource("5_eckrs")]
+position = Vector2(342, 6)
+
+[node name="Cercueil" parent="." instance=ExtResource("5_b4and")]
+position = Vector2(364, 13)
+
+[node name="ChargingMonk3" parent="." instance=ExtResource("5_eckrs")]
+position = Vector2(343, 16)
+
+[node name="ChargingMonk4" parent="." instance=ExtResource("5_eckrs")]
+position = Vector2(337, 17)
+
+[node name="Door" parent="." instance=ExtResource("6_lofp7")]
+position = Vector2(-59, 0)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(347, -14)
+occluder = SubResource("OccluderPolygon2D_f7qi6")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+position = Vector2(426, -14)
+occluder = SubResource("OccluderPolygon2D_f7qi6")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="."]
+position = Vector2(506, -14)
+occluder = SubResource("OccluderPolygon2D_f7qi6")
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="."]
+position = Vector2(586, -13)
+occluder = SubResource("OccluderPolygon2D_f7qi6")
+
+[node name="PointLight2D7" parent="." instance=ExtResource("7_13dwb")]
+position = Vector2(347, -16)
+scale = Vector2(0.936357, 0.936357)
+
+[node name="PointLight2D8" parent="." instance=ExtResource("7_13dwb")]
+position = Vector2(176, -20)
+scale = Vector2(0.936357, 0.936357)
+
+[node name="PointLight2D9" parent="." instance=ExtResource("7_13dwb")]
+position = Vector2(495.707, -34.8544)
+scale = Vector2(0.876764, 0.876764)
+
+[node name="PointLight2D10" parent="." instance=ExtResource("7_13dwb")]
+position = Vector2(96, -17)
+scale = Vector2(0.936357, 0.936357)
+
+[node name="PointLight2D11" parent="." instance=ExtResource("7_13dwb")]
+position = Vector2(17, -18)
+scale = Vector2(0.936357, 0.936357)
+
+[node name="PointLight2D12" parent="." instance=ExtResource("7_13dwb")]
+position = Vector2(-38, -10)
+scale = Vector2(0.936357, 0.936357)
+
+[node name="PointLight2D13" parent="." instance=ExtResource("7_13dwb")]
+position = Vector2(256, -18)
+scale = Vector2(0.936357, 0.936357)
+
+[node name="EndColorChurch" type="Sprite2D" parent="."]
+position = Vector2(418, 1)
+texture = SubResource("GradientTexture2D_i7tl7")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://chr7ad47kiofn"]
+
+[ext_resource type="FontFile" uid="uid://b7meo2vwkx04r" path="res://assets/graphic/fonts/Junicode-Regular.ttf" id="1_cve8m"]
+
+[node name="dialogue_buttons" type="Button"]
+custom_minimum_size = Vector2(100, 50)
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.882353, 0.721569, 0.266667, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.203922, 0.203922, 0.203922, 1)
+theme_override_fonts/font = ExtResource("1_cve8m")
+theme_override_font_sizes/font_size = 20
+text = "Buttons"
+flat = true

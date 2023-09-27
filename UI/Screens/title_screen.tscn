@@ -1,0 +1,97 @@
+[gd_scene load_steps=21 format=3 uid="uid://bml8ygfjntbyf"]
+
+[ext_resource type="Script" path="res://UI/Screens/title_screen.gd" id="1_ulmub"]
+[ext_resource type="Texture2D" uid="uid://dqba0kg3qx8wp" path="res://assets/graphic/menu.png" id="2_lvnea"]
+[ext_resource type="Texture2D" uid="uid://dov7yg1jw7eqd" path="res://assets/graphic/UI/jouer-1.png" id="3_6unjk"]
+[ext_resource type="Texture2D" uid="uid://c47t5fwsjv44n" path="res://assets/graphic/UI/jouer-2.png" id="4_egcgd"]
+[ext_resource type="Texture2D" uid="uid://bcbyr4rrwwhr5" path="res://assets/graphic/UI/jouer-3.png" id="5_c2dmp"]
+[ext_resource type="Texture2D" uid="uid://88iuuwlq074u" path="res://assets/graphic/UI/options-1.png" id="6_8lynw"]
+[ext_resource type="Texture2D" uid="uid://d3qyf0sg1w1kv" path="res://assets/graphic/UI/options-2.png" id="7_yv83d"]
+[ext_resource type="Texture2D" uid="uid://bvn8da6b7i38k" path="res://assets/graphic/UI/options-3.png" id="8_ddu7k"]
+[ext_resource type="Texture2D" uid="uid://dsr2u63ibkjui" path="res://assets/graphic/UI/credits-1.png" id="9_sbnfx"]
+[ext_resource type="Texture2D" uid="uid://byg8s1tpns3vx" path="res://assets/graphic/UI/credits-2.png" id="10_1h3h5"]
+[ext_resource type="Texture2D" uid="uid://c66vf7takc72m" path="res://assets/graphic/UI/credits-3.png" id="11_6am3p"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k3sep"]
+texture = ExtResource("3_6unjk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rj73s"]
+texture = ExtResource("4_egcgd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0acig"]
+texture = ExtResource("5_c2dmp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ptm6k"]
+texture = ExtResource("6_8lynw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n5brg"]
+texture = ExtResource("7_yv83d")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1qdk7"]
+texture = ExtResource("8_ddu7k")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xyq36"]
+texture = ExtResource("9_sbnfx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o2jil"]
+texture = ExtResource("10_1h3h5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g1hoq"]
+texture = ExtResource("11_6am3p")
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ulmub")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_lvnea")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -756.84
+offset_top = -254.46
+offset_right = -531.84
+offset_bottom = 30.5404
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="ButtonPlay" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_k3sep")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rj73s")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0acig")
+
+[node name="ButtonSettings" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_ptm6k")
+theme_override_styles/hover = SubResource("StyleBoxTexture_n5brg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1qdk7")
+
+[node name="ButtonCredit" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(225, 75)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_xyq36")
+theme_override_styles/hover = SubResource("StyleBoxTexture_o2jil")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_g1hoq")
+
+[connection signal="pressed" from="VBoxContainer/ButtonPlay" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonCredit" to="." method="_on_button_credit_pressed"]

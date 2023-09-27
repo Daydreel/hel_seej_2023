@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cafl73hsbmto6"]
+
+[node name="Camera2D" type="Camera2D"]
+offset = Vector2(0, -13.675)
+zoom = Vector2(10, 10)
+process_callback = 0
+position_smoothing_enabled = true

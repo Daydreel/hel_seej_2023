@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://n5m6rjx87cbg"
+path="res://.godot/imported/moine2.dialogue-e33f5c3a84e11282d2d4829af4bc9458.tres"
+
+[deps]
+
+source_file="res://assets/dialogues/moine2.dialogue"
+dest_files=["res://.godot/imported/moine2.dialogue-e33f5c3a84e11282d2d4829af4bc9458.tres"]
+
+[params]
+
+defaults=true
