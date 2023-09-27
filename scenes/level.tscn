@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://uahsp2fe2idu" path="res://assets/graphic/monk_faces/moine 2 sans visage.png" id="6_sgmnq"]
 [ext_resource type="PackedScene" uid="uid://dhej0bg4dwt21" path="res://gameobject/props/light_candace.tscn" id="7_13dwb"]
 [ext_resource type="Texture2D" uid="uid://b8pxg1847lgm7" path="res://assets/graphic/monk_faces/moine 3 sans visage.png" id="7_pcdwf"]
-[ext_resource type="Texture2D" uid="uid://otd6ibs705tr" path="res://assets/graphic/monk_faces/moine creepy +++.png" id="8_w8u18"]
+[ext_resource type="Texture2D" uid="uid://otd6ibs705tr" path="res://assets/graphic/monk_faces/moine creepy.png" id="9_gx0n4"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_f7qi6"]
 polygon = PackedVector2Array(-333, 22, -322, -3, -341, -2)
@@ -130,7 +130,7 @@ music_change = true
 position = Vector2(1570, 97)
 scale = Vector2(0.7, 0.7)
 dialogue_path = "res://assets/dialogues/moine4.dialogue"
-monk_texture = ExtResource("8_w8u18")
+monk_texture = ExtResource("9_gx0n4")
 music_state = 4
 music_change = true
 

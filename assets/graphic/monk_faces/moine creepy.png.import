@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqpmisy7b15x7"
-path="res://.godot/imported/moine 2.png-87b155b40616d3737cd2e96db6c53a16.ctex"
+uid="uid://otd6ibs705tr"
+path="res://.godot/imported/moine creepy.png-96475b9f649a03b3ecada9dc85cf2d90.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphic/monk_faces/moine 2.png"
-dest_files=["res://.godot/imported/moine 2.png-87b155b40616d3737cd2e96db6c53a16.ctex"]
+source_file="res://assets/graphic/monk_faces/moine creepy.png"
+dest_files=["res://.godot/imported/moine creepy.png-96475b9f649a03b3ecada9dc85cf2d90.ctex"]
 
 [params]
 
