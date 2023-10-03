@@ -37,5 +37,9 @@ func change_volume(power : float) -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(volume))
 
 
+func stop_musics():
+	self.stop()
+	audio_stream_2.stop()
+
 func _ready() -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(volume))

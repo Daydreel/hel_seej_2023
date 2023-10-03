@@ -8,8 +8,7 @@ extends Control
 func _ready():
 	anim_p.play("scary")
 	DataPlayer.is_dead = true
-
-
+	MusicManager.stop_musics()
 
 
 func _on_animation_player_animation_finished(anim_name):
