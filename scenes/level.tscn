@@ -98,7 +98,7 @@ texture = SubResource("GradientTexture2D_i7tl7")
 [node name="GameObjects" type="Node2D" parent="."]
 
 [node name="Player" parent="GameObjects" instance=ExtResource("3_r6hyd")]
-position = Vector2(1047, 65)
+position = Vector2(-1472, 70)
 scale = Vector2(0.7, 0.7)
 
 [node name="Moines" type="Node2D" parent="GameObjects"]
@@ -148,12 +148,14 @@ scale = Vector2(-0.7, 0.7)
 position = Vector2(2206, 132)
 
 [node name="ChargingMonk3" parent="GameObjects" instance=ExtResource("5_eckrs")]
-position = Vector2(2257, 73)
-scale = Vector2(-0.7, 0.7)
+position = Vector2(2232, 78)
+rotation = 3.14159
+scale = Vector2(0.7, -0.7)
 
 [node name="ChargingMonk4" parent="GameObjects" instance=ExtResource("5_eckrs")]
-position = Vector2(2217, 164)
-scale = Vector2(-0.7, 0.7)
+position = Vector2(2172, 136)
+rotation = 3.14159
+scale = Vector2(0.7, -0.7)
 
 [node name="Door" parent="GameObjects" instance=ExtResource("6_lofp7")]
 position = Vector2(-2075, 8)

@@ -19,7 +19,6 @@ func _physics_process(_delta: float) -> void:
 	movement()
 
 
-
 func movement() -> void:
 	var direction : float = Input.get_axis("player_move_left", "player_move_right")
 	velocity.x = direction * speed
@@ -44,8 +43,10 @@ func _on_EventBus_dialogue_initiated() -> void:
 	anim_state["parameters/conditions/running"] = false
 	anim_state["parameters/conditions/idle"] = true
 
+
 func _on_EventBus_dialogue_ended() -> void:
 	set_physics_process(true)
+
 
 func _sfx_foot_step() -> void:
 	foot_step_stream.play()
