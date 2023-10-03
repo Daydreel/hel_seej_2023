@@ -2,8 +2,8 @@ extends Button
 
 var trap = false
 
-#func _ready():
-#	set_physics_process(false)
+func _ready():
+	mouse_entered.connect(_on_mouse_entered)
 
 func _physics_process(_delta):
 	if trap:
@@ -12,6 +12,7 @@ func _physics_process(_delta):
 func _on_mouse_entered():
 	text = "J'AVOUE !"
 	trap = true
+	mouse_entered.disconnect(_on_mouse_entered)
 
 
 func _on_pressed():

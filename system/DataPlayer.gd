@@ -13,3 +13,8 @@ func _ready() -> void:
 
 func _on_EventBus_admission() -> void:
 	is_door_trapped = true
+
+func reset():
+	is_trapped = false
+	is_door_trapped = false
+	is_dead = false
