@@ -14,7 +14,7 @@ func fade_out():
 
 func goto_menu():
 	goto_scene(scenes[0].resource_path)
-
+	DataPlayer.reset()
 
 func goto_scene(path : String) -> void:
 	fade_in()
