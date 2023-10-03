@@ -98,7 +98,7 @@ texture = SubResource("GradientTexture2D_i7tl7")
 [node name="GameObjects" type="Node2D" parent="."]
 
 [node name="Player" parent="GameObjects" instance=ExtResource("3_r6hyd")]
-position = Vector2(-1711, 35)
+position = Vector2(1047, 65)
 scale = Vector2(0.7, 0.7)
 
 [node name="Moines" type="Node2D" parent="GameObjects"]

@@ -15,6 +15,8 @@ var monk_texture : Texture
 
 var can_interact = false
 var await_answer : bool = false
+var clic_delay : float = 0.3
+
 
 func _ready():
 	EventBus.admission.connect(_on_EventBus_admission)
@@ -54,6 +56,7 @@ func display_dialogue():
 	character_label.text = dialogue_line.character
 	
 	if !dialogue_line.responses.is_empty():
+		await $Timer.timeout
 		if DataPlayer.is_trapped:
 			display_trapped_choices()
 		else :
