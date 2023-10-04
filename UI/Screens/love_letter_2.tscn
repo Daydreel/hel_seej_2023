@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bxrwwdkdynoy3"]
 
 [ext_resource type="Script" path="res://UI/Screens/love_letter2.gd" id="1_fk8wv"]
-[ext_resource type="Texture2D" uid="uid://g6rjlo8px2xd" path="res://assets/graphic/intro_v2_1.png" id="2_kb6ck"]
+[ext_resource type="Texture2D" uid="uid://4rgcefbh5yy7" path="res://assets/graphic/Intro1.png" id="2_al7wu"]
 
 [node name="LoveLetter2" type="Control"]
 layout_mode = 3
@@ -19,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_kb6ck")
+texture = ExtResource("2_al7wu")
 
 [node name="Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
