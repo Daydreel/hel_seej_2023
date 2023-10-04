@@ -34,7 +34,7 @@ func music_transition(music_selected : int) -> void:
 
 func change_volume(power : float) -> void:
 	volume = power
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(volume))
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(volume))
 
 
 func stop_musics():
@@ -42,4 +42,4 @@ func stop_musics():
 	audio_stream_2.stop()
 
 func _ready() -> void:
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(volume))
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(volume))

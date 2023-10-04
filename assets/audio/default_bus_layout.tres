@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://cqvescrpcb6y1"]
+[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://ruutic0u5y2f"]
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_tmagg"]
 resource_name = "Reverb"
@@ -28,5 +28,5 @@ bus/3/name = &"Music"
 bus/3/solo = false
 bus/3/mute = false
 bus/3/bypass_fx = false
-bus/3/volume_db = -38.1449
+bus/3/volume_db = 0.0
 bus/3/send = &"Master"

@@ -82,6 +82,9 @@ graph_offset = Vector2(-353, -16)
 [node name="Camus" type="CharacterBody2D"]
 script = ExtResource("1_qaofc")
 
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_w3pr8")
 

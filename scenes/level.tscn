@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://duenlliiqkuwg"]
+[gd_scene load_steps=17 format=3 uid="uid://duenlliiqkuwg"]
 
 [ext_resource type="Texture2D" uid="uid://ler6s3clh6ua" path="res://assets/graphic/Fond_Eglise_1 final.png" id="1_0ufeq"]
 [ext_resource type="Texture2D" uid="uid://cduywkq8fpayp" path="res://assets/graphic/Fond_Eglise_2_final.png" id="2_5dwi6"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dhej0bg4dwt21" path="res://gameobject/props/light_candace.tscn" id="7_13dwb"]
 [ext_resource type="Texture2D" uid="uid://b8pxg1847lgm7" path="res://assets/graphic/monk_faces/moine 3 sans visage.png" id="7_pcdwf"]
 [ext_resource type="Texture2D" uid="uid://otd6ibs705tr" path="res://assets/graphic/monk_faces/moine creepy.png" id="9_gx0n4"]
+[ext_resource type="AudioStream" uid="uid://bbojyaywy8pam" path="res://assets/audio/flambeaux_eglise.ogg" id="13_crphc"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_f7qi6"]
 polygon = PackedVector2Array(-333, 22, -322, -3, -341, -2)
@@ -159,3 +160,8 @@ scale = Vector2(0.7, -0.7)
 
 [node name="Door" parent="GameObjects" instance=ExtResource("6_lofp7")]
 position = Vector2(-2075, 8)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_crphc")
+volume_db = 10.0
+autoplay = true

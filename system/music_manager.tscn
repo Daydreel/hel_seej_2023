@@ -66,14 +66,16 @@ _data = {
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" node_paths=PackedStringArray("audio_stream_2", "transition_player")]
 stream = ExtResource("1_oqvuk")
 autoplay = true
+bus = &"Music"
 script = ExtResource("1_ml7v6")
 audio_stream_2 = NodePath("AudioStreamPlayer")
 transition_player = NodePath("AnimationPlayer")
-volume = 0.5
+volume = 0.2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 volume_db = -80.0
 autoplay = true
+bus = &"Music"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
