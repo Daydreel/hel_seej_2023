@@ -1,11 +1,11 @@
 ~ dialogue
 
-Moine flippant: Monseigneur, l'intimité de cet office des défunts que nous célébrons avec une ferveur... particulière.
-- Au nom de qui résonnent ces chants funèbres, Mon Père?
-	Moine flippant: C’est pour le Seigneur Cindasuindo, gentilhomme de ce voisinage qui est mort aujourd’hui.
-	- Vous vous abusez car je sais qu’il est en vie !
-		Moine flippant: C’est vous-mêmes qui vous vous trompez, pensant qu’il soit en vie, car il est véritablement mort.
-		Moine flippant: Répondez maintenant : lorsque la vierge sent un vent perfide glisser entre les murs sacrés du couvent et susurrer des promesses de caresses impudiques, que doit-elle faire ?
+Moine horrible: Monseigneur, joignez-vous à ce [wait=0.5][speed=0.1]requiem[wait=0.5][speed=1] si particulier.
+- Au nom de qui résonnent ces chants funèbres ?
+	Moine horrible: C’est pour le Seigneur [wait=0.5][speed=0.1]Cindasuindo[wait=0.5][speed=1], gentilhomme qui est mort aujourd’hui.
+	- Vous vous trompez, je sais qu’il est en vie !
+		Moine horrible: C’est vous-mêmes qui vous abusez car il est véritablement [wait=0.5][speed=0.1]mort.
+		Moine horrible: Voilà pourquoi :[wait=0.8] lorsqu'une épouse de Dieu entend les [wait=0.5][speed=0.2]promesses perfides du séducteur[wait=0.5][speed=1], malgré les murs du couvent,[wait=0.5] que doit-elle faire ?
 		do DataPlayer.is_trapped = true
 		- Prier !
 		- Méditer !

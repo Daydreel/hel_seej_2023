@@ -1,19 +1,34 @@
 ~ dialogue
 
-Moine froid : Seigneur, en cette nuit d'office sacré, il m'est impérieux de sonder la teneur de votre âme. Êtes-vous réellement doué de vertu ?
-- Oui
-	Moine froid : Si vous l'osez, soumettez-vous à l'examen de cette prétendue vertu...
-	Moine froid: Le lion, frappé par l'opulence d'un taureau aux cornes d'or, se voit étreint par la dualité du vice : convoitise et colère brûlante. Ô pécheur, comment ce lion, semblable à toi, doit-il naviguer à travers ces eaux troubles pour quitter le vice ?
-	- Tiraillé par l'orgueil, il discerne si ce rival projette lueur trompeuse ou vrai éclat d'étoile.
-		Moine froid: Votre réponse témoigne d'une certaine piété, Seigneur, car le sage lion se doit de méditer avant que d'agir. Les ténèbres avancent et le temps n'attend pas. Bonsoir.
-		=> END
-	- Il éclipse le rival, risquant triomphe ou trépas.
-		Moine froid: Votre réponse éhontée trahit un manque flagrant de dévotion car le lion juste ne doit pas agir avec impulsion. Éloignez-vous sur-le-champ, avant que votre ombre ne corrompe davantage cette assemblée pieuse.
+Moine froid : Nous célèbrons une messe d'importance ce soir, [speed=0.3]seuls les justes peuvent y assister.
+- Je suis pur.
+	Moine froid : Vraiment, Seigneur ? Vous m'avez tout l'air d'un aventurier. [wait=0.8]Laissez-moi mettre cette [wait=0.5][speed=0.2]pureté[speed=0.5][wait=0.5] à l'épreuve...
+	=> question
+- Pour quelle raison m'interdire la maison du Christ ?
+	Moine froid: Ce qui [wait=0.5][speed=0.2]appartient au Christ[speed=1][wait=0.5] vous intéresse donc ? Alors...
+	=> question
+- J'ai rendez-vous avec l'amour.
+	Moine froid: Et cet [wait=0.5][speed=0.1]amour[speed=0.5][wait=0.5] est-il honnête ?
+	- C'est l'Amour de Dieu.
+		Moine froid: Vous vous présentez comme un homme saint.[wait=0.8] Laissez-moi mettre votre [wait=0.5][speed=0.1]dévotion[speed=0.5][wait=0.5] à l'épreuve...
+		=> question
+	- C'est l'amour d'Athanagilde.
+		Moine froid: Votre [wait=0.5][speed=0.2]naïveté[speed=1][wait=0.5] vous fait confesser votre penchant pour une épouse du Christ ! [wait=0.8]\nPour poignarder le serpent qui vous habite, faites pénitence, mon fils. [wait=0.8]\nQuittez ce lieu et ne mangez plus que du pain, ne buvez plus que de l'eau, quarante jours durant.
+		do EventBus.game_over()
+=> END
 
-	- Il s'interroge sur la rivalité qui l'habite, voyant si ces cornes l'irritent ou attisent sa propre ardeur.
-		Moine froid: Votre réponse éhontée trahit un manque flagrant de piété car l'honnête lion se doit de résister au tumulte de ses émotions. Éloignez-vous sur-le-champ, avant que votre ombre ne corrompe davantage cette assemblée pieuse.
-
-- Non
-	Moine froid : Seigneur, votre présence souille la solennité de notre office. Éloignez-vous sur-le-champ, avant que votre ombre ne corrompe davantage cette assemblée pieuse.
+~ question
+Moine froid: [[Bien...|Répondez-moi...|Écoutez bien...]]Un renard convoite des poules enfermées dans l'enclos d'un moine. Par la mélodie de ses chants suaves, il envoûte la plus jeune et la plus blanche d'entre elles qui décide de sortir de son propre gré et se fait dévorer. De quels péchés capitaux le renard est-il coupable ?
+- Paresse et Gloutonnerie.
+	Moine froid: La gloutonnerie pourrait fonctionner mais ce n'est pas là que réside son vrai crime. [wait=0.8]Je vous donne une autre chance...
+	=> question
+- Luxure et Avarice.
+	Moine froid: Un péché sur deux. [wait=0.8]Faites mieux !
+	=> question
+- Orgueil et Tristesse.
+	Moine froid: Vous êtes inculte, la tristesse n'est plus un péché depuis longtemps... [wait=0.8]Je vous laisse tenter à nouveau.
+	=> question
+- Luxure et Envie.
+	Moine froid: Oui, [wait=0.8]son chant de [wait=0.5][speed=0.1]séduction[speed=1][wait=0.5] et son goût [wait=0.5][speed=0.1]vorace[speed=1][wait=0.5] pour le bien d'autrui, font du renard un très grand pécheur.[wait=0.8] \nMinuit moins dix...[wait=0.8] \nJe vous laisse aller.
 
 => END

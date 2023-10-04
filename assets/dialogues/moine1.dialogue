@@ -1,19 +1,48 @@
 ~ dialogue
 
-Moine sympa: De grâce, noble seigneur, en cette nuit où l'on récite un saint office, pourrais-je vous interroger sur la pureté de votre âme et savoir si vous êtes empreint de vertu ?
-- Oui
-	Moine sympa : Si cela ne vous dérange point, je souhaite mettre à l'épreuve cette vertu que vous dites posséder...
-	Moine sympa: Monsieur, dites-moi, lorsque l'aigle, superbe en son vol céleste, contemple-t-il avec mépris les bêtes terrestres, ou s'élève-t-il si haut en quête de la proximité divine ?
-	- Il se vante d'être au-dessus des autres créatures.
-		Moine sympa: Cette réponse est dénuée de piété, car l'orgueil est un péché capital. Votre âme ne semble guère en harmonie avec notre cérémonie. Je vous prie de vous retirer pour la quiétude de notre office.
+Moine sympa: Seigneur,[wait=0.8] que faites-vous ici dans l'obscurité de cette nuit ?
+- Je dois y rencontrer quelqu'un.
+	Moine sympa : Puis-je vous demander qui ?
+	- Moi-même... 
+		Moine sympa: Voilà une réponse sage.[wait=0.8] Me laisserez-vous sonder vos connaissances sur les péchés et vices de l'homme ?
+		=> question
+	- Une jeune demoiselle.
+		Moine sympa: N'est-ce pas un lieu trop...[speed=0.1] sacré[wait=1][speed=1] pour une telle rencontre ?[wait=0.8] Qui est cette dame ?		
+		- Ma soeur.
+			Moine sympa: Fort bien.[wait=0.8] En l'attendant, me laisserez-vous sonder vos connaissances sur les péchés et vices de l'homme ?
+			=> question
+		- Soeur Athanagilde.
+		Moine sympa: Votre [speed=0.1]honnêteté[wait=0.3][speed=1] vous pousse à confesser votre penchant pour une épouse du Christ. [wait=0.8]\nPour chasser ce venin de votre coeur, faites pénitence, mon fils ![wait=0.8] \nQuittez ce lieu et ne manquez aucune messe désormais.
+		do EventBus.game_over()
+	- Le Christ, notre sauveur.
+		Moine sympa: Vous êtes au bon endroit.[wait=0.8] Me laisserez-vous sonder vos connaissances sur les péchés et vices de l'homme ?
+		=> question
+=> END
 
-	- Il s'élève pour se rapprocher du Créateur.
-		Moine sympa: Votre réponse révèle une âme pieuse. Mais le temps presse, bonsoir Seigneur.
-		=> END
-	- Il cherche simplement une proie facile à capturer.
-		Moine sympa: Cette réponse est dépourvue de l'essence spirituelle. Votre âme ne semble guère en harmonie avec nos rites. Je vous prie de vous retirer pour la quiétude de notre office.
-
-- Non
-	Moine sympa : Noble Seigneur, votre âme ne semble guère en harmonie avec notre cérémonie. Je vous prie de vous retirer pour la quiétude de notre office.
+~ question
+Moine sympa: [[Dites-moi quel|Quel|Alors, quel|Voyons voir... quel]] est le péché qui n'est pas un péché capital parmi les suivants : [wait=1]orgueil, [wait=0.3]colère, [wait=0.3]tristesse, [wait=0.3]paresse, [wait=0.3]gloutonnerie, [wait=0.3]envie, [wait=0.3]avarice, [wait=0.3]luxure.
+- L'orgueil.
+	Moine Sympa: Non, l'orgueil est bien l'un des sept péchés capitaux[wait=0.8], concentrez-vous d'avantage, mon Seigneur !
+	=> question
+- La colère.
+	Moine Sympa: C'est sans doute une méprise, la colère est l'un des sept péchés capitaux[wait=0.8], concentrez-vous d'avantage, mon Seigneur.
+	=> question
+- La tristesse.
+	Moine sympa: Oui, la tristesse n'est plus un péché, mais elle l'a longtemps été, notamment sous le nom d'[speed=0.2]acédie[speed=1] ![wait=0.8] \nIl est déjà minuit moins le quart, [speed=0.2]le temps presse[wait=0.8][speed=1], bonsoir Seigneur !
+- La paresse.
+	Moine Sympa: C'est un erreur, la paresse est l'un des sept péchés capitaux[wait=0.8], encore un effort, mon Seigneur.
+	=> question
+- La gloutonnerie.
+	Moine Sympa: Non Monseigneur, la gloutonnerie ou gourmandise est l'un des sept péchés capitaux[wait=0.8], concentrez-vous d'avantage !
+	=> question
+- L'envie.
+	Moine Sympa: C'est sans doute une méprise, l'envie est l'un des sept péchés capitaux[wait=0.8], concentrez-vous d'avantage, mon Seigneur.
+	=> question
+- L'avarice.
+	Moine Sympa: L'avarice est bien l'un des sept péchés capitaux[wait=0.8], concentrez-vous d'avantage, mon Seigneur.
+	=> question
+- La luxure.
+	Moine Sympa: Allons Monseigneur, la luxure ou débauche est l'un des sept péchés capitaux[wait=0.8], vous plus que quiconque devriez le savoir. Essayez encore.
+	=> question
 
 => END
