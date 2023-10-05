@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://duenlliiqkuwg"]
+[gd_scene load_steps=20 format=3 uid="uid://duenlliiqkuwg"]
 
 [ext_resource type="Texture2D" uid="uid://ler6s3clh6ua" path="res://assets/graphic/Fond_Eglise_1 final.png" id="1_0ufeq"]
 [ext_resource type="Texture2D" uid="uid://cduywkq8fpayp" path="res://assets/graphic/Fond_Eglise_2_final.png" id="2_5dwi6"]
@@ -15,7 +15,16 @@
 [ext_resource type="AudioStream" uid="uid://bbojyaywy8pam" path="res://assets/audio/flambeaux_eglise.ogg" id="13_crphc"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_f7qi6"]
-polygon = PackedVector2Array(-333, 22, -322, -3, -341, -2)
+polygon = PackedVector2Array(-334, 22, -323, -20, -346, -19)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qr4mi"]
+polygon = PackedVector2Array(-331, 22, -322, -22, -342, -21)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4t5dv"]
+polygon = PackedVector2Array(-331, 34, -322, -11, -344, -10)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wckg2"]
+polygon = PackedVector2Array(-331, 29, -321, -14, -343, -13)
 
 [sub_resource type="Gradient" id="Gradient_u6y6g"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -53,15 +62,15 @@ occluder = SubResource("OccluderPolygon2D_f7qi6")
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="EnvironmentBack/Lights"]
 position = Vector2(-154, -116)
-occluder = SubResource("OccluderPolygon2D_f7qi6")
+occluder = SubResource("OccluderPolygon2D_qr4mi")
 
 [node name="LightOccluder2D3" type="LightOccluder2D" parent="EnvironmentBack/Lights"]
 position = Vector2(645, -123)
-occluder = SubResource("OccluderPolygon2D_f7qi6")
+occluder = SubResource("OccluderPolygon2D_4t5dv")
 
 [node name="LightOccluder2D4" type="LightOccluder2D" parent="EnvironmentBack/Lights"]
 position = Vector2(1441, -106)
-occluder = SubResource("OccluderPolygon2D_f7qi6")
+occluder = SubResource("OccluderPolygon2D_wckg2")
 
 [node name="PointLight2D7" parent="EnvironmentBack/Lights" instance=ExtResource("7_13dwb")]
 position = Vector2(-1827, -84)
@@ -86,6 +95,12 @@ position = Vector2(2128, -120)
 
 [node name="PointLight2D14" parent="EnvironmentBack/Lights" instance=ExtResource("7_13dwb")]
 position = Vector2(2390, -114)
+
+[node name="PointLight2D15" parent="EnvironmentBack/Lights" instance=ExtResource("7_13dwb")]
+position = Vector2(2080, -86)
+
+[node name="LightCandace" parent="EnvironmentBack/Lights/PointLight2D15" index="0"]
+visible = false
 
 [node name="EndColorChurch" type="Sprite2D" parent="EnvironmentBack"]
 position = Vector2(2709, 0)
@@ -136,6 +151,7 @@ music_state = 4
 music_change = true
 
 [node name="MoinesChargeantBackground" type="Node2D" parent="GameObjects"]
+visible = false
 
 [node name="ChargingMonk2" parent="GameObjects/MoinesChargeantBackground" instance=ExtResource("5_eckrs")]
 position = Vector2(2015, -3)
@@ -165,3 +181,5 @@ position = Vector2(-2075, 8)
 stream = ExtResource("13_crphc")
 volume_db = 10.0
 autoplay = true
+
+[editable path="EnvironmentBack/Lights/PointLight2D15"]
