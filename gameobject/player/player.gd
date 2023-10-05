@@ -23,7 +23,7 @@ func movement() -> void:
 	var direction : float = Input.get_axis("player_move_left", "player_move_right")
 	var mouse_position_x : float = get_viewport().get_mouse_position().x
 	var mouse_input := float(Input.is_action_pressed("interact"))
-	direction += -mouse_input if mouse_position_x < get_viewport().size.x / 2.0 else mouse_input
+	direction += -mouse_input if mouse_position_x < ProjectSettings.get_setting("display/window/size/viewport_width") / 2.0 else mouse_input
 	
 	velocity.x = clampf(direction, -1.0, 1.0) * speed
 	move_and_slide()
