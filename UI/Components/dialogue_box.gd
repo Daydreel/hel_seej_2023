@@ -40,6 +40,8 @@ func _input(event):
 		else :
 			end_dialogue()
 
+	if event.is_action_pressed("escape"):
+		end_dialogue()
 
 func start_dialogue(title : String):
 	EventBus.dialogue_initiated.emit()
