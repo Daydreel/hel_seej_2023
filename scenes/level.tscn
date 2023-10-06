@@ -151,7 +151,6 @@ music_state = 4
 music_change = true
 
 [node name="MoinesChargeantBackground" type="Node2D" parent="GameObjects"]
-visible = false
 
 [node name="ChargingMonk2" parent="GameObjects/MoinesChargeantBackground" instance=ExtResource("5_eckrs")]
 position = Vector2(2015, -3)
