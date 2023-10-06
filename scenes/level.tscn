@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://duenlliiqkuwg"]
+[gd_scene load_steps=21 format=3 uid="uid://duenlliiqkuwg"]
 
-[ext_resource type="Texture2D" uid="uid://ler6s3clh6ua" path="res://assets/graphic/Fond_Eglise_1 final.png" id="1_0ufeq"]
+[ext_resource type="Texture2D" uid="uid://bwm8gqw3psalr" path="res://assets/graphic/bancs sprites.png" id="1_gvv8r"]
 [ext_resource type="Texture2D" uid="uid://cduywkq8fpayp" path="res://assets/graphic/Fond_Eglise_2_final.png" id="2_5dwi6"]
+[ext_resource type="Texture2D" uid="uid://b1r50e18v1bij" path="res://assets/graphic/Fond_Eglise_1 final sans banc.png" id="2_pybac"]
 [ext_resource type="PackedScene" uid="uid://ctauqquyt4r7x" path="res://gameobject/player/player.tscn" id="3_r6hyd"]
 [ext_resource type="PackedScene" uid="uid://dqukyx2i1rgkd" path="res://gameobject/moine/moine.tscn" id="4_sc42c"]
 [ext_resource type="PackedScene" uid="uid://6wcsar3ejvvn" path="res://gameobject/cercueil/cercueil.tscn" id="5_b4and"]
@@ -39,9 +40,9 @@ height = 600
 [node name="EnvironmentBack" type="Node2D" parent="."]
 
 [node name="FondEglise1" type="Sprite2D" parent="EnvironmentBack"]
-modulate = Color(0.5, 0.5, 0.5, 1)
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
 position = Vector2(161, 0)
-texture = ExtResource("1_0ufeq")
+texture = ExtResource("2_pybac")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="EnvironmentBack"]
 
@@ -53,6 +54,18 @@ motion_offset = Vector2(0, 4.035)
 [node name="FondEglise2" type="Sprite2D" parent="EnvironmentBack/ParallaxBackground/ParallaxLayer"]
 position = Vector2(249, 0)
 texture = ExtResource("2_5dwi6")
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="EnvironmentBack"]
+layer = 0
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="EnvironmentBack/ParallaxBackground2"]
+position = Vector2(-63, 0)
+motion_scale = Vector2(1.1, 1.1)
+
+[node name="Bancs" type="Sprite2D" parent="EnvironmentBack/ParallaxBackground2/ParallaxLayer2"]
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
+position = Vector2(249, 0)
+texture = ExtResource("1_gvv8r")
 
 [node name="Lights" type="Node2D" parent="EnvironmentBack"]
 
@@ -117,6 +130,29 @@ texture = SubResource("GradientTexture2D_i7tl7")
 position = Vector2(-1472, 70)
 scale = Vector2(0.7, 0.7)
 
+[node name="MoinesChargeantBackground" type="Node2D" parent="GameObjects"]
+
+[node name="ChargingMonk2" parent="GameObjects/MoinesChargeantBackground" instance=ExtResource("5_eckrs")]
+position = Vector2(2015, -3)
+scale = Vector2(-0.7, 0.7)
+
+[node name="ChargingMonk" parent="GameObjects/MoinesChargeantBackground" instance=ExtResource("5_eckrs")]
+position = Vector2(2118, 20)
+scale = Vector2(-0.7, 0.7)
+
+[node name="Cercueil" parent="GameObjects" instance=ExtResource("5_b4and")]
+position = Vector2(2206, 132)
+
+[node name="ChargingMonk3" parent="GameObjects" instance=ExtResource("5_eckrs")]
+position = Vector2(2232, 78)
+rotation = 3.14159
+scale = Vector2(0.7, -0.7)
+
+[node name="ChargingMonk4" parent="GameObjects" instance=ExtResource("5_eckrs")]
+position = Vector2(2172, 136)
+rotation = 3.14159
+scale = Vector2(0.7, -0.7)
+
 [node name="Moines" type="Node2D" parent="GameObjects"]
 
 [node name="Moine" parent="GameObjects/Moines" instance=ExtResource("4_sc42c")]
@@ -149,29 +185,6 @@ dialogue_path = "res://assets/dialogues/moine4.dialogue"
 monk_texture = ExtResource("9_gx0n4")
 music_state = 4
 music_change = true
-
-[node name="MoinesChargeantBackground" type="Node2D" parent="GameObjects"]
-
-[node name="ChargingMonk2" parent="GameObjects/MoinesChargeantBackground" instance=ExtResource("5_eckrs")]
-position = Vector2(2015, -3)
-scale = Vector2(-0.7, 0.7)
-
-[node name="ChargingMonk" parent="GameObjects/MoinesChargeantBackground" instance=ExtResource("5_eckrs")]
-position = Vector2(2118, 20)
-scale = Vector2(-0.7, 0.7)
-
-[node name="Cercueil" parent="GameObjects" instance=ExtResource("5_b4and")]
-position = Vector2(2206, 132)
-
-[node name="ChargingMonk3" parent="GameObjects" instance=ExtResource("5_eckrs")]
-position = Vector2(2232, 78)
-rotation = 3.14159
-scale = Vector2(0.7, -0.7)
-
-[node name="ChargingMonk4" parent="GameObjects" instance=ExtResource("5_eckrs")]
-position = Vector2(2172, 136)
-rotation = 3.14159
-scale = Vector2(0.7, -0.7)
 
 [node name="Door" parent="GameObjects" instance=ExtResource("6_lofp7")]
 position = Vector2(-2075, 8)
