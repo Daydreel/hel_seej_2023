@@ -17,7 +17,6 @@ var can_interact = false
 var await_answer : bool = false
 var clic_delay : float = 0.3
 
-
 func _ready():
 	EventBus.admission.connect(_on_EventBus_admission)
 	
@@ -45,6 +44,7 @@ func _input(event):
 
 func start_dialogue(title : String):
 	EventBus.dialogue_initiated.emit()
+	MusicManager.play_mumbling()
 	dialogue_line = await r_dialogue.get_next_dialogue_line(title)
 
 
@@ -89,11 +89,13 @@ func next(next_id: String) -> void:
 
 func end_dialogue():
 	EventBus.dialogue_ended.emit()
+	MusicManager.stop_mumbling()
 	queue_free()
 
 
 func _on_button_pressed(choice : DialogueResponse):
-	for button in flow_container.get_children() :
+	MusicManager.play_sfx(2, 4.0)
+	for button in flow_container.get_children():
 		button.queue_free()
 	next(choice.next_id)
 	await_answer = false
@@ -101,6 +103,7 @@ func _on_button_pressed(choice : DialogueResponse):
 
 
 func _on_EventBus_admission():
+	MusicManager.play_sfx(2, 4.0)
 	end_dialogue()
 
 

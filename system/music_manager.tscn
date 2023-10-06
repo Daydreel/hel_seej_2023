@@ -63,7 +63,7 @@ _data = {
 "transition": SubResource("Animation_26eag")
 }
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" node_paths=PackedStringArray("audio_stream_2", "transition_player")]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" node_paths=PackedStringArray("audio_stream_2", "transition_player", "global_sfx", "stream_mumbling")]
 stream = ExtResource("1_oqvuk")
 autoplay = true
 bus = &"Music"
@@ -71,6 +71,8 @@ script = ExtResource("1_ml7v6")
 audio_stream_2 = NodePath("AudioStreamPlayer")
 transition_player = NodePath("AnimationPlayer")
 volume = 0.5
+global_sfx = NodePath("GlobalSfxPlayer")
+stream_mumbling = NodePath("MumblingSfx")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 volume_db = -80.0
@@ -81,3 +83,7 @@ bus = &"Music"
 libraries = {
 "": SubResource("AnimationLibrary_ym0iu")
 }
+
+[node name="GlobalSfxPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="MumblingSfx" type="AudioStreamPlayer" parent="."]

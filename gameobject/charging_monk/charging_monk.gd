@@ -19,4 +19,5 @@ func _physics_process(delta):
 
 func _on_EventBus_admission():
 	await get_tree().create_timer(1.0).timeout
+	MusicManager.play_sfx(3, 1.5)
 	set_physics_process(true)

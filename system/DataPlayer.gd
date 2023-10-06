@@ -18,3 +18,4 @@ func reset():
 	is_trapped = false
 	is_door_trapped = false
 	is_dead = false
+	MusicManager.mumblig_order = 0

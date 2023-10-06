@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cu52n5mx28q4u"
+path="res://.godot/imported/selection boite lettres.wav-83fe81636a1284e766b4a69ffa307918.sample"
+
+[deps]
+
+source_file="res://assets/audio/selection boite lettres.wav"
+dest_files=["res://.godot/imported/selection boite lettres.wav-83fe81636a1284e766b4a69ffa307918.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

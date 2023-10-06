@@ -21,3 +21,4 @@ func _on_animation_player_animation_finished(anim_name):
 func _on_button_pressed() -> void:
 	SceneTransition.goto_scene(SceneTransition.scenes[5].resource_path)
 	MusicManager.music_transition(0)
+	MusicManager.play_sfx(0, 3.0)
