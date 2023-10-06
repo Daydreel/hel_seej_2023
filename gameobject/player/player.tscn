@@ -140,5 +140,5 @@ color = Color(0, 0, 0, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_o54mn")
-volume_db = -3.0
+volume_db = -4.5
 bus = &"Footsteps"
